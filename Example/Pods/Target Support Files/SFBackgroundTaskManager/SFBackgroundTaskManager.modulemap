@@ -1,0 +1,6 @@
+framework module SFBackgroundTaskManager {
+  umbrella header "SFBackgroundTaskManager-umbrella.h"
+
+  export *
+  module * { export * }
+}

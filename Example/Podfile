@@ -1,13 +1,375 @@
 use_frameworks!
 
-platform :ios, '10.0'
+platform :ios, '12.0'
 
 target 'SFModuleApp_Example' do
   pod 'SFModuleApp', :path => '../'
-
+  
+  
+  
+  # ===================== Guide ==================== #
+  # 操作指南/新手教程
+  pod 'Instructions'
+  
+  
+  
+  # ===================== Notification ==================== #
+  # 通知栏消息
+  pod 'NotificationBannerSwift'
+  
+  
+  
+  # ===================== StatusBar ==================== #
+  # 状态栏消息
+  # pod 'JDStatusBarNotification', :git => 'https://github.com/calimarkus/JDStatusBarNotification.git'
+  
+  
+  
+  # ===================== NavBar ==================== #
+  
+  
+  # ===================== TabBar ==================== #
+  # 自定义tabbar
+  pod 'CYLTabBarController/Lottie'
+  
+  
+  
+  # ===================== UI ==================== #
+  # 集Animation和UI与一身，还有Icon、Color等元素，使用这个库就可以打造一个漂亮的UI界面并具有优雅的动画效果
+  pod 'Material'
+  
+  
+  
+  # ===================== View ==================== #
+  # 钻石闪耀
+  pod "Twinkle"
+  # 闪烁
+  pod 'Shimmer'
+  # 星星评分
+  pod 'HCSStarRatingView'
+  # 自定义textview
+  pod 'FSTextView'
+  # 电子表格
+  pod 'SpreadsheetView'
+  # 骨架屏
+  pod 'SkeletonView'
+  # 空白视图
+  pod 'LYEmptyView'
+  # 轮播
+  pod 'FSPagerView'
+  # 分组
+  pod 'JXSegmentedView'
+  # 分页
+  pod 'JXPagingView'
+  # 多标签, 改了点属性，原版也可用
+  # pod 'TagListView'
+  # 水波纹
+  pod 'YXWaveView'
+  # 渐变加载条
+  pod 'GradientLoadingBar'
+  # 数字变形
+  pod 'NumberMorphView'
+  # 五彩纸屑, api写法过期
+  # pod "SAConfettiView"
+  # 支持色调颜色的模糊效果
+  pod "VisualEffectView"
+  # 脉冲动画
+  pod "Pulsator"
+  # 分段进度
+  pod 'MultiProgressView'
+  
+  # ===================== image ==================== #
+  # 加载gif图片
+  pod 'FLAnimatedImage'
+  # 加载网络图片
+  pod 'Kingfisher'
+  
+  # >>>>>>>>>> phont picker/browser <<<<<<<<<< #
+  # 照片/视频选择器
+  pod 'HXPhotoPicker'
+  pod 'JXPhotoBrowser'
+  
+  
+  
+  # ===================== Label ==================== #
+  # 文字跑马灯
+  pod 'MarqueeLabel'
+  # 文字变形
+  pod 'LTMorphingLabel'
+  # 文字高亮 #、@、url，支持自定义类型
+  pod 'ActiveLabel'
+  # 文字翻转 - CAMediaTimingFunctionName写法过期
+  # pod 'Splitflap'
+  # 文字晃瞎眼 - runloop方法过期
+  # pod "GlitchLabel"
+  # 倒计时 - CAEmitterLayer写法过期、runloop方法过期
+  # pod 'CountdownLabel'
+  # 展开/收起 - 文字只能左对齐，收起的点击事件触发区域不是文字
+  # pod "ExpandableLabel"
+  
+  # ===================== Button ==================== #
+  # 带动效的按钮，类似一键三连效果
+  pod 'FaveButton'
+  # api写法过期
+  # pod 'DOFavoriteButton'
+  # api写法过期
+  # pod 'WCLShineButton'
+  # 液体浮动，api写法过期
+  # pod "LiquidFloatingActionButton"
+  # 悬浮按钮，效果类似LiquidFloatingActionButton，api写法过期
+  # pod 'Floaty'
+  # 带抖动、展开动画，api写法过期
+  # pod 'TransitionButton'
+  # 登录按钮
+  pod 'LGButton'
+  
+  # ===================== Alert/HUD/Toast ==================== #
+  # hud
+  pod 'SVProgressHUD'
+  # toast
+  pod 'Toast-Swift'
+  # tip
+  pod 'AMPopTip'
+  
+  
+  # ===================== Indicator ==================== #
+  # 加载动画
+  pod 'NVActivityIndicatorView'
+  
+  
+  
+  # ===================== Slider ==================== #
+  # 带气泡的slider - 有些方法已经过期且库已经好几年不维护了，需要依赖`pop`库
+  # pod 'fluid-slider'
+  # 环形进度
+  pod 'HGCircularSlider'
+  
+  
+  # ===================== Switch ==================== #
+  # 几种开关样式
+  pod 'TKSwitcherCollection'
+  
+  
+  
+  # ===================== Stepper ==================== #
+  
+  
+  
+  # ===================== Menu ==================== #
+  # 弹出菜单
+  pod 'NewPopMenu'
+  # 环形按钮菜单 - 有些方法已经过期且库已经好几年不维护了
+  # pod 'CircleMenu'
+  
+  
+  
+  # ===================== Calendar ==================== #
+  # 日历
+  pod 'FSCalendar'
+  
+  
+  
+  # ===================== Charts ==================== #
+  # 图表 - 学习数据
+  pod 'AAInfographics', :git => 'https://github.com/AAChartModel/AAChartKit-Swift.git'
+  # 图表
+  pod 'DGCharts'
+  
+  
+  
+  # ===================== Animated ==================== #
+  pod 'pop'
+  # 一行代码添加UI动画
+  pod "ViewAnimator"
+  
+  
+  
+  # ===================== tableView ==================== #
+  # 头图缩放
+  pod 'YZHeaderScaleImage'
+  # 折叠动画cell - CAMediaTimingFunctionName写法过期
+  # pod 'FoldingCell'
+  # 左滑右滑事件
+  pod 'SwipeCellKit'
+  # 标记
+  pod 'TDBadgedCell'
+  
+  
+  # ===================== collectionView ==================== #
+  # 数据驱动的复杂列表
+  pod 'IGListKit'
+  
+  # >>>>>>>>>> flowLayout <<<<<<<<<< #
+  # 弹簧阻尼效果
+  pod "BouncyLayout"
+  # 放大重点内容
+  pod 'SFFocusViewLayout'
+  # 复杂的嵌套布局
+  pod 'IBPCollectionViewCompositionalLayout'
+  # 控制cell的布局方向
+  pod "AlignedCollectionViewFlowLayout"
+  # 垂直方向上支持左右滑动删除的卡片堆叠效果
+  pod 'VerticalCardSwiper'
+  # 卡片轮换效果
+  pod 'GravitySliderFlowLayout'
+  # 旋转木马
+  pod "UPCarouselFlowLayout"
+  # 上下分块，编译此库的swift语言版本过低，会导致项目编译失败
+  # pod 'CarLensCollectionViewLayout'
+  # 倾斜布局，刷新会导致布局错乱
+  # pod 'CollectionViewSlantedLayout'
+  
+  # >>>>>>>>>> 过渡动画 <<<<<<<<<< #
+  # cell过渡动画, 最新1.1.0版本Cube动画对纯代码创建的cell失效
+  pod 'AnimatedCollectionViewLayout', '1.0.1'
+  # 多个CollectionView页面跳转，波浪跳转动画, 属性没有用public修饰，部分代码写法过期
+  # pod 'CKWaveCollectionViewTransition'
+  
+  # ===================== Layout布局 ==================== #
+  pod 'SnapKit'
+  pod 'Masonry'
+  # 纯代码定义FoldingCell时用到
+  pod 'EasyPeasy'
+  
+  
+  
+  # ===================== Network ==================== #
+  # 网络请求
+  pod 'Moya'
+  # Websockets
+  pod 'Starscream'
+  
+  
+  
+  # ===================== Json<->Model ==================== #
+  pod 'HandyJSON'
+  pod 'SwiftyJSON'
+  pod 'MJExtension'
+  
+  
+  
+  # ===================== Cache ==================== #
+  pod 'MMKV'
+  pod 'YYCache'
+  
+  
+  
+  # ===================== CodeStyle ==================== #
+  # 异步编程
+  pod "PromiseKit"
+  # 资源类型校验
+  pod 'R.swift'
+  # Rx
+  pod 'RxSwift'
+  pod 'RxCocoa'
+  
+  
+  
+  # ===================== Common ==================== #
+  # 键盘管理
+  pod 'IQKeyboardManagerSwift'
+  # 触摸反馈生成器
+  pod 'Haptica'
+  # 全屏手势
+  pod 'FDFullscreenPopGesture'
+  # 屏幕旋转
+  pod 'ScreenRotator'
+  # 字体管理
+  pod 'FontBlaster'
+  # 使用枚举取代字体名字
+  pod 'UIFontComplete'
+  # 加密算法
+  pod 'CryptoSwift'
+  # 代码风格规范
+  pod 'SwiftLint'
+  # 上拉刷新，下拉加载
+  pod 'MJRefresh'
+  # 看门狗
+  pod 'Watchdog'
+  # UIView调试器，FLEX完全可以代替
+  # pod 'InAppViewDebugger'
+  # 更新简介
+  pod 'WhatsNew'
+  # 性能监控
+  pod 'GDPerformanceView-Swift'
+  # 后台保活
+  pod 'SFBackgroundTaskManager', :git => 'https://github.com/Sfh03031/SFBackgroundTaskManager.git'
+  
+  
+  # ===================== Theme ==================== #
+  # 换肤
+  pod 'SwiftTheme'
+  
+  
+  
+  # ===================== Router ==================== #
+  # 业务解耦，中间件
+  pod 'CTMediator'
+  
+  
+  
+  # ===================== Live ==================== #
+  # 直播推流
+  pod 'LFLiveKit'
+  
+  
+  
+  # ===================== 切面hook ==================== #
+  # hook
+  pod 'Aspects'
+  
+  # ===================== 切面hook ==================== #
+  # 热门搜索
+  pod "PYSearch"
+  
+  
+  
+  # ===================== Other ==================== #
+  # 日期处理
+  pod 'SwiftDate'
+  # 二维码生成、识别
+  pod 'EFQRCode'
+  # 根据国家编码生成国旗
+  pod 'FlagKit'
+  # pod 'InjectHotReload'
+  
+  
+  pod 'FLEX', :configurations => ['Debug']
+  # UI调试
+  pod 'LookinServer', :subspecs => ['Swift'], :configurations => ['Debug']
+  
+  
+  
+  # ===================== SF ==================== #
+  pod 'SFStyleKit', '0.1.2'
+  pod 'SFNetworkMonitor', '0.1.2'
+  pod 'SFNetworkManager', '0.1.1'
+  pod 'LottieService'
+  
+  
+  
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      target.build_configurations.each do |config|
+        config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*] "] = "arm64"
+        # 修复DT_TOOLCHAIN_DIR cannot be used to evaluate LIBRARY_SEARCH_PATHS, use TOOLCHAIN_DIR instead错误
+        xcconfig_path = config.base_configuration_reference.real_path
+        xcconfig = File.read(xcconfig_path)
+        xcconfig_mod = xcconfig.gsub(/DT_TOOLCHAIN_DIR/, "TOOLCHAIN_DIR")
+        File.open(xcconfig_path, "w") { |file| file << xcconfig_mod }
+        # 将所有三方库的部署版本号强制修改到Xcode支持的范围内
+        if config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'].to_f < 12.0
+          config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '12.0'
+        end
+      end
+    end
+  end
+  
+  
   target 'SFModuleApp_Tests' do
     inherit! :search_paths
 
     pod 'FBSnapshotTestCase' , '~> 2.1.4'
   end
+  
 end

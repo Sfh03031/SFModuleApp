@@ -1,0 +1,6 @@
+framework module SFModuleApp {
+  umbrella header "SFModuleApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
