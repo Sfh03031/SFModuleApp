@@ -14,7 +14,7 @@ class SKCollectionViewVC: BaseViewController {
     
     var isShowAni:Bool = false
     private var items = [Any?]()
-    private let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .medium)
+    private let activityIndicator = UIActivityIndicatorView(style: .medium)
     private let animations = [AnimationType.vector((CGVector(dx: 0, dy: 30)))]
     
     override func viewDidLoad() {
@@ -126,8 +126,8 @@ class SKCollectionViewVC: BaseViewController {
         view.delegate = self
         view.dataSource = self
         view.register(SKCollectionViewCell.self, forCellWithReuseIdentifier: NSStringFromClass(SKCollectionViewCell.self))
-        view.register(HeaderFooterReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerId")
-        view.register(HeaderFooterReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "footerId")
+        view.register(HeaderFooterReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
+        view.register(HeaderFooterReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "footerId")
         if #available(iOS 11.0, *) {
             view.contentInsetAdjustmentBehavior = .never
         }
@@ -158,7 +158,7 @@ extension SKCollectionViewVC: SkeletonCollectionViewDataSource {
     }
     
     func collectionSkeletonView(_ skeletonView: UICollectionView, supplementaryViewIdentifierOfKind: String, at indexPath: IndexPath) -> ReusableCellIdentifier? {
-        if supplementaryViewIdentifierOfKind == UICollectionElementKindSectionHeader {
+        if supplementaryViewIdentifierOfKind == UICollectionView.elementKindSectionHeader {
             return "headerId"
         } else {
             return "footerId"
@@ -196,7 +196,7 @@ extension SKCollectionViewVC: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionElementKindSectionHeader {
+        if kind == UICollectionView.elementKindSectionHeader {
             let header:HeaderFooterReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath) as! HeaderFooterReusableView
             
             header.infoLabel.text = "UICollectionElementKindSectionHeader"

@@ -30,7 +30,7 @@ public struct CarLensCollectionViewLayoutOptions {
     ///   - decelerationRate: A deceleration for a scroll view. The default value is `.fast`.
     ///   - shouldShowScrollIndicator: A value indicating whether collection view should have a scroll indicator. The default value is `false`.
     ///   - itemSize: The size to use for cells. The default height is equal to a collection view height. The width is equal to the `collection view width - 60`.
-    public init(minimumSpacing: CGFloat = 20, decelerationRate: UIScrollView.DecelerationRate = UIScrollViewDecelerationRateFast, shouldShowScrollIndicator: Bool = false, itemSize: CGSize? = nil) {
+    public init(minimumSpacing: CGFloat = 20, decelerationRate: UIScrollView.DecelerationRate = UIScrollView.DecelerationRate.fast, shouldShowScrollIndicator: Bool = false, itemSize: CGSize? = nil) {
         self.minimumSpacing = minimumSpacing
         self.decelerationRate = decelerationRate
         self.shouldShowScrollIndicator = shouldShowScrollIndicator

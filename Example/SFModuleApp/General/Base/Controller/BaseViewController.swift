@@ -39,7 +39,7 @@ class BaseViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(loginSuccess), name: Notification.Name("loginSuccess"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(goToLogin), name: Notification.Name("goToLogin"), object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(networkChanged), name: Notification.Name(SFNetworkMonitor.kNotificationNameNetworkChanged), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(networkChanged), name: SFNetworkMonitor.kNotificationNameNetworkChanged, object: nil)
     }
     
     @objc func flexTap(_ sender: UIGestureRecognizer) {

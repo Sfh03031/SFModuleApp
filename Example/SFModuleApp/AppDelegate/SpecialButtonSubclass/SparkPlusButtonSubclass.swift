@@ -8,6 +8,9 @@
 
 import UIKit
 import SFStyleKit
+import CYLTabBarController
+import CTMediator
+import JohnWick
 
 class SparkPlusButtonSubclass: CYLPlusButton, CYLPlusButtonSubclassing {
 
@@ -68,7 +71,15 @@ class SparkPlusButtonSubclass: CYLPlusButton, CYLPlusButtonSubclassing {
     
     /// 不规则tabBarItem点击跳转页面
     static func plusChildViewController() -> UIViewController {
-        return BaseNavigationController(rootViewController: GammaVC())
+        let path = "SFApp://Gamma/toGamma?title=Gamma"
+        let pathUrl = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? path
+        guard let vc = CTMediator.sharedInstance().openUrl(pathUrl, moduleName: "SFModuleApp_Example", completion: { dic in
+            
+        }) else {
+            SFLog("模块缺失")
+            return UIViewController()
+        }
+        return BaseNavigationController(rootViewController: vc)
     }
     
     /// 不规则tabBarItem位置，默认居中

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FoldingCell
 
 enum Const {
     static let closeCellHeight: CGFloat = 120

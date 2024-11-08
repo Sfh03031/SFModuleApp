@@ -33,7 +33,7 @@ class JXScratchTicketView: UIView {
         scratchView = JXScratchView(contentView: contentView, maskView: maskView)
         scratchView.delegate = self
         scratchView.strokeLineWidth = 25
-        scratchView.strokeLineCap = kCALineCapRound
+        scratchView.strokeLineCap = CAShapeLayerLineCap.round
         scratchView.frame = CGRect(x: 33*ratio, y: 140*ratio, width: 337*ratio, height: 154*ratio)
         addSubview(scratchView)
     }

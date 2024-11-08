@@ -8,6 +8,7 @@
 
 import UIKit
 import SpreadsheetView
+import ScreenRotator
 
 class GanttChartVC: BaseViewController {
 

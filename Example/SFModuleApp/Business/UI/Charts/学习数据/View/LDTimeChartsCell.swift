@@ -33,7 +33,7 @@ class LDTimeChartsCell: UITableViewCell {
     
     var chartView: AAChartView!
 
-    init(style:UITableViewCellStyle, reuseIdentifier:String?,cellType:Int = 1) {
+    init(style:UITableViewCell.CellStyle, reuseIdentifier:String?,cellType:Int = 1) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
         self.backgroundColor = UIColor.sf.hexColor(hex: "#F5F6F9", alpha: 1)

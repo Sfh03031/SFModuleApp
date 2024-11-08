@@ -53,6 +53,8 @@ class SFServiceSettingVC: BaseViewController {
             list = [
                 ["name": "正式环境", "address": HOST_URL_RELEASE],
                 ["name": "开发环境", "address": HOST_URL_DEV],
+                ["name": "开发环境1", "address": HOST_URL_DEV1],
+                ["name": "开发环境2", "address": HOST_URL_DEV2],
                 ["name": "测试环境", "address": HOST_URL_TEST]
             ]
             UserDefaults.standard.set(list, forKey: ServiceKey)

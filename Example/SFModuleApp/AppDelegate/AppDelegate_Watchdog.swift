@@ -9,6 +9,7 @@
 import Foundation
 import Watchdog
 import Toast_Swift
+import JohnWick
 
 extension AppDelegate {
     
@@ -16,7 +17,7 @@ extension AppDelegate {
         watchdog = Watchdog(threshold: 1.25, watchdogFiredCallback: {
             DispatchQueue.main.async {
                 self.ConfigTabBarController()
-                WINDOW?.makeToast("监控到进程堵塞超过阈值，自动重置进程")
+                SF.WINDOW?.makeToast("监控到进程堵塞超过阈值，自动重置进程")
             }
         })
     }

@@ -12,31 +12,33 @@ import UIKit
 import Reachability
 
 @objc public enum SFNetStatus: Int {
+    /// 无网络
     case noNet = 0
+    /// wifi
     case wifi = 1
+    /// 移动流量
     case cellular = 2
 }
 
 @objc open class SFNetworkMonitor: NSObject {
-
     /// 单例
     @objc public static let shared = SFNetworkMonitor()
-    
-    @objc public static let kNotificationNameNetworkChanged = "SFNetworkMonitorNetworkChanged"
-    
     /// 无网络时是否弹窗提示
     @objc public var isShowAlertWhenNoNet = false
-    
     /// 网络状态
     @objc public var netStatus: SFNetStatus = .noNet
+    /// 网格状态改变的通知名称
+    @objc public static let kNotificationNameNetworkChanged = NSNotification.Name(rawValue: "SFNetworkMonitorNetworkChanged")
+    /// 是否在监听网络状态
+    @objc public var isMonitoring: Bool = false
     
     fileprivate var reachability: Reachability?
-    
     fileprivate var alert: UIAlertController?
     
     /// 开始监听
+    /// - Parameter useClosures: 是否使用闭包，也会发通知
     @objc public func monitoring(useClosures: Bool = true) {
-        
+        self.isMonitoring = true
         let reachability = try? Reachability()
         self.reachability = reachability
         
@@ -52,12 +54,12 @@ import Reachability
                     self?.netStatus = .noNet
                     self?.showAlertIfNoNet()
                 }
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: Self.kNotificationNameNetworkChanged), object: self?.netStatus)
+                NotificationCenter.default.post(name: Self.kNotificationNameNetworkChanged, object: self?.netStatus)
             }
             reachability?.whenUnreachable = { [weak self] _ in
                 self?.netStatus = .noNet
                 self?.showAlertIfNoNet()
-                NotificationCenter.default.post(name: NSNotification.Name(rawValue: Self.kNotificationNameNetworkChanged), object: self?.netStatus)
+                NotificationCenter.default.post(name: Self.kNotificationNameNetworkChanged, object: self?.netStatus)
             }
         } else {
             NotificationCenter.default.addObserver(
@@ -95,7 +97,7 @@ import Reachability
                 self.netStatus = .noNet
                 self.showAlertIfNoNet()
             }
-            NotificationCenter.default.post(name: NSNotification.Name(rawValue: Self.kNotificationNameNetworkChanged), object: self.netStatus)
+            NotificationCenter.default.post(name: Self.kNotificationNameNetworkChanged, object: self.netStatus)
         }
     }
     

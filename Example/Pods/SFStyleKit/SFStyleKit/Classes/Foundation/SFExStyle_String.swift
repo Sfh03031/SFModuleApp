@@ -9,10 +9,6 @@
 import Foundation
 import UIKit
 
-#if canImport(SwiftDate)
-import SwiftDate
-#endif
-
 public let dateFormatter = DateFormatter()
 
 public extension SFExStyle where Base == String {
@@ -153,7 +149,6 @@ public extension SFExStyle where Base == String {
     }
     
     /// 时间戳 转 0000-00-00 00:00:00
-    ///
     /// - Parameter timeStamp: 时间戳
     /// - Returns: 年月日时分秒
     var timeStampToData: String {
@@ -169,18 +164,6 @@ public extension SFExStyle where Base == String {
         dateFormatter.dateFormat = "yyyy-MM"
         return dateFormatter.date(from: base)
     }
-    
-    #if canImport(SwiftDate)
-    /// 时间, 距今多久
-    func dateBeforeNow() -> String? {
-        return base.toDate()?.convertTo(timezone: Zones.asiaShanghai).toRelative(since: DateInRegion(Date(), region: .current))
-    }
-
-    /// 时间转换
-    func date(_ format: String = "yyyy-MM-dd HH:mm:ss") -> String? {
-        return base.toDate()?.convertTo(timezone: Zones.asiaShanghai).toFormat(format, locale: Locales.chinese)
-    }
-    #endif
     
     /// base64转image
     func base64StringToImage() -> UIImage? {
@@ -307,7 +290,6 @@ public extension SFExStyle where Base == String {
         return true
     }
     
-    
 }
 
 
@@ -348,5 +330,18 @@ public extension String {
         }
         
         return htmlString
+    }
+    
+    /// 手机号中间变*
+    func maskedPhoneNumber() -> String {
+        let phoneCount = self.count
+        if phoneCount < 4 {
+            return self
+        } else {
+            let startIndex = self.index(self.startIndex, offsetBy: 3)
+            let endIndex = self.index(self.startIndex, offsetBy: phoneCount - 4)
+            let range = startIndex..<endIndex
+            return self.replacingCharacters(in: range, with: String(repeating: "*", count: phoneCount - 7))
+        }
     }
 }

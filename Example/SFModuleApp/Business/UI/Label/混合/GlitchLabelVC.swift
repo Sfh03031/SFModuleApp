@@ -40,7 +40,7 @@ class GlitchLabelVC: BaseViewController {
         view.delegate = self
         view.dataSource = self
         view.register(GlitchCell.self, forCellWithReuseIdentifier: NSStringFromClass(GlitchCell.self))
-        view.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerId")
+        view.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
         if #available(iOS 11.0, *) {
             view.contentInsetAdjustmentBehavior = .never
         }
@@ -68,7 +68,7 @@ extension GlitchLabelVC: UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionElementKindSectionHeader {
+        if kind == UICollectionView.elementKindSectionHeader {
             let header:UICollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "headerId", for: indexPath)
             
             let label = UILabel(frame: CGRect(x: 0, y: 0, width: SCREENW, height: 50), bgColor: .systemBackground, text: "共\(self.dataList.count)种，颜色随机", textColor: UIColor.sf.random, font: UIFont.systemFont(ofSize: 16, weight: .medium), aligment: .center)

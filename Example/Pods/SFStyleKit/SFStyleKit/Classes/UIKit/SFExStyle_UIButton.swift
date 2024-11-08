@@ -8,7 +8,7 @@
 
 import UIKit
 
-//MARK: - 系统Api支持
+// MARK: 系统Api支持
 
 public extension SFExStyle where Base: UIButton {
     
@@ -179,7 +179,7 @@ public extension SFExStyle where Base: UIButton {
     }
 }
 
-//MARK: - 扩展
+// MARK: - 扩展
 
 /// button中图片的位置枚举
 public enum ImagePosition {
@@ -290,6 +290,7 @@ public extension SFExStyle where Base: UIButton {
         
         base.titleEdgeInsets = titleInsets
         base.imageEdgeInsets = imageInsets
+        
         return self
     }
 }

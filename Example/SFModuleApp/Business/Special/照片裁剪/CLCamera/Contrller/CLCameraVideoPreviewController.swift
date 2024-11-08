@@ -20,7 +20,7 @@ protocol CLCameraVideoPreviewControllerDelegate: AnyObject {
 class CLCameraVideoPreviewController: UIViewController {
     init(url: URL) {
         let session = AVAudioSession.sharedInstance()
-        try? session.setCategory(AVAudioSessionCategoryPlayback)
+        try? session.setCategory(AVAudioSession.Category.playback)
         try? session.setActive(true)
         self.url = url
         player = AVPlayer(playerItem: AVPlayerItem(asset: .init(url: url)))
@@ -165,7 +165,7 @@ extension CLCameraVideoPreviewController {
 
 @objc private extension CLCameraVideoPreviewController {
     func playToEndTime() {
-        player.seek(to: kCMTimeZero)
+        player.seek(to: CMTime.zero)
         player.play()
     }
 }

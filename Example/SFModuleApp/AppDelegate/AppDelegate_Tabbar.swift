@@ -10,6 +10,9 @@ import Foundation
 import SFNetworkManager
 import LottieService
 import CYLTabBarController
+import JohnWick
+import HandyJSON
+import CTMediator
 
 struct tabInfoModel: HandyJSON {
     var list: [tabItemModel]?
@@ -37,7 +40,7 @@ extension AppDelegate {
     /// 动态化tabbar
     @objc func ConfigTabBarController() {
         /// 模拟网络请求获取到数据
-//        SparkNetManager.request(target: BasicAPIService.tabbarInfo) { msg, model in
+//        SFNetworkManager.request(target: BasicAPIService.tabbarInfo) { msg, model in
 //            print("获取到model")
 //            self.tabModel = model
 //            self.initRootTabBarVC()
@@ -53,31 +56,31 @@ extension AppDelegate {
                  "img_normal": "home_normal",
                  "img_press": "home_selected",
                  "name": "overall",
-                 "url": "spark://com.spark.SparkOnline.hs.act.AlphaVC?key=111",
+                 "url": "SFApp://Alpha/toAlpha?title=Alpha",
                  "enable": "",
                  "isShow": ""],
                 ["id": "", 
                  "img": "https://ksimg.sparke.cn/images/smartBook/english/2023/7/1852227787938188672.zip",
                  "img_normal": "study_normal",
                  "img_press": "study_selected",
-                 "name": "table",
-                 "url": "spark://com.spark.SparkOnline.hs.act.BroveVC?key=222",
+                 "name": "scroll",
+                 "url": "SFApp://Brove/toBrove?title=Brove",
                  "enable": "",
                  "isShow": ""],
                 ["id": "", 
                  "img": "https://ksimg.sparke.cn/images/smartBook/english/2023/7/1852228870268027456.zip",
                  "img_normal": "book_normal",
                  "img_press": "book_selected",
-                 "name": "collection",
-                 "url": "spark://com.spark.SparkOnline.hs.act.DeltaVC?key=333",
+                 "name": "ui",
+                 "url": "SFApp://Delta/toDelta?title=Delta",
                  "enable": "",
                  "isShow": ""],
                 ["id": "", 
                  "img": "https://ksimg.sparke.cn/images/smartBook/english/2023/7/1852229119376130624.zip",
                  "img_normal": "mine_normal",
                  "img_press": "mine_selected",
-                 "name": "ui",
-                 "url": "spark://com.spark.SparkOnline.hs.act.EpsilonVC?key=444",
+                 "name": "github",
+                 "url": "SFApp://Epsilon/toEpsilon?title=Epsilon",
                  "enable": "",
                  "isShow": ""],
             ],
@@ -85,19 +88,6 @@ extension AppDelegate {
         
         self.tabModel = tabInfoModel.deserialize(from: dic)!
         initRootTabBarVC()
-    }
-    
-    /// 通过字符串获取控制器类型
-    /// - Parameters:
-    ///   - vcName: 控制器字符串
-    /// - Returns: 控制器类型
-    func getVCClassFromString(vcName: String) -> UIViewController.Type? {
-        let bundleName = Bundle.main.object(forInfoDictionaryKey: "CFBundleName") as? String
-        if let ctrlClass = NSClassFromString((bundleName ?? "") + "." + vcName) as? UIViewController.Type {
-            return ctrlClass
-        } else {
-            return nil
-        }
     }
     
     /// 解析数据，初始化根控制器
@@ -115,21 +105,16 @@ extension AppDelegate {
 //            dic.updateValue(NSValue(cgSize: CGSizeMake(33, 33)), forKey: CYLTabBarLottieSize)
             itemArr.append(dic)
             
-            let url = URL(string: m?.url ?? "")
-            let host = url?.host ?? ""
-            if host.components(separatedBy: ".").last != nil {
-                let vcStr = host.components(separatedBy: ".").last!
-                if let vcCls = getVCClassFromString(vcName: vcStr) {
-                    let vc = vcCls.init()
-                    vc.navigationItem.title = m?.name ?? ""
-                    let nv = BaseNavigationController(rootViewController: vc)
-                    vcArr.append(nv)
-                } else {
-                    print("字符串转类型失败")
-                }
-            } else {
-                print("协议格式不正确")
+            let path = m?.url ?? ""
+            let pathUrl = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? path
+            guard let vc = CTMediator.sharedInstance().openUrl(pathUrl, moduleName: "SFModuleApp_Example", completion: { dic in
+                
+            }) else {
+                SFLog("模块缺失")
+                return
             }
+            let nv = BaseNavigationController(rootViewController: vc)
+            vcArr.append(nv)
         }
     
         // 不相等说明出错了，展示默认
@@ -197,7 +182,7 @@ extension AppDelegate: CYLTabBarControllerDelegate {
         animation.values = [1.0, 1.3, 0.9, 1.15, 0.95, 1.5, 1]
         animation.duration = 0.5
         animation.repeatCount = repeatCount
-        animation.calculationMode = kCAAnimationCubic
+        animation.calculationMode = CAAnimationCalculationMode.cubic
         animationView.layer.add(animation, forKey: nil)
     }
     

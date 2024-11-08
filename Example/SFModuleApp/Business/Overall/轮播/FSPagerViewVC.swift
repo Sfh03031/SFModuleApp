@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import JXSegmentedView
+import JXPagingView
 
 class FSPagerViewVC: BaseViewController {
 

@@ -366,7 +366,7 @@ extension CountdownLabel {
                                                        repeats: true)
         
         // register to NSrunloop
-        RunLoop.current.add(timer, forMode: RunLoopMode.commonModes)
+        RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
         counting = true
     }
     

@@ -6,7 +6,7 @@
 //  Copyright © 2023 Spark. All rights reserved.
 //
 
-import Foundation
+import JohnWick
 
 /// 网络请求头参数
 public let sparkAppId = "210951669544977408"
@@ -27,49 +27,21 @@ public let ServiceKey = "ServiceKey"
 
 // MARK: - 尺寸、系统判断
 
-/// WINDOW
-public var WINDOW: UIWindow? {
-    if #available(iOS 13.0, *) {
-        var window:UIWindow? = nil
-        for sence: UIWindowScene in ((UIApplication.shared.connectedScenes as? Set<UIWindowScene>)!) {
-            if sence.activationState == .foregroundActive {
-                window = sence.windows.first
-                break
-            }
-        }
-        return window
-    } else {
-        return UIApplication.shared.keyWindow
-    }
-}
-
 /** 屏幕的宽 */
-var SCREENW: CGFloat { UIScreen.main.bounds.size.width }
+var SCREENW: CGFloat { SF.SCREEN_WIDTH }
 /** 屏幕的高 */
-var SCREENH: CGFloat { UIScreen.main.bounds.size.height }
+var SCREENH: CGFloat { SF.SCREEN_HEIGHT }
 /** 顶部StatusBar高度 */
-var TopStatusBar: CGFloat {
-    if #available(iOS 11.0, *) {
-        return WINDOW?.safeAreaInsets.top ?? 20
-    } else {
-        return 20
-    }
-}
-var navBarHeight: CGFloat { 44.0 }
+var TopStatusBar: CGFloat { SF.StatusBarHeight }
+var navBarHeight: CGFloat { SF.NavBarHeight }
 /** 顶部StatusBar+Nav的高度判断 */
-var TopHeight: CGFloat { TopStatusBar + navBarHeight }
+var TopHeight: CGFloat { SF.TopSafeHeight }
 /** 底部安全区域高度 */
-var SoftHeight: CGFloat {
-    if #available(iOS 11.0, *) {
-        return WINDOW?.safeAreaInsets.bottom ?? 0
-    } else {
-        return 0
-    }
-}
+var SoftHeight: CGFloat { SF.SafeAreaHeight }
 
-var tabBarHeight: CGFloat { 49.0 }
+var tabBarHeight: CGFloat { SF.TabBarHeight }
 /** 底部tabbar+soft的高度判断 */
-var BottomHeight: CGFloat { SoftHeight + tabBarHeight }
+var BottomHeight: CGFloat { SF.BottomSafeHeight }
 
 /** iPhone 5 */
 let isIPhone5 = SCREENH == 568 ? true:false
@@ -107,13 +79,13 @@ func iPadX() -> Bool {
 }
 
 // 文本行高处理
-func GetLabelParagraphStyle(lineHeight: CGFloat, lab: UILabel) -> [NSAttributedStringKey: Any] {
+func GetLabelParagraphStyle(lineHeight: CGFloat, lab: UILabel) -> [NSAttributedString.Key: Any] {
     let paragraphStyle = NSMutableParagraphStyle()
     paragraphStyle.maximumLineHeight = lineHeight
     paragraphStyle.minimumLineHeight = lineHeight
-    var multipleAttributes = [NSAttributedStringKey: Any]()
-    multipleAttributes[NSAttributedStringKey(rawValue: NSAttributedStringKey.paragraphStyle.rawValue)] = paragraphStyle
-    multipleAttributes[NSAttributedStringKey(rawValue: NSAttributedStringKey.baselineOffset.rawValue)] = (lineHeight - lab.font.lineHeight) / 4
+    var multipleAttributes = [NSAttributedString.Key: Any]()
+    multipleAttributes[NSAttributedString.Key(rawValue: NSAttributedString.Key.paragraphStyle.rawValue)] = paragraphStyle
+    multipleAttributes[NSAttributedString.Key(rawValue: NSAttributedString.Key.baselineOffset.rawValue)] = (lineHeight - lab.font.lineHeight) / 4
     return multipleAttributes
 }
 
@@ -121,5 +93,5 @@ func textSizeWH(text: String, font: UIFont, maxSize: CGSize, lineSpace: CGFloat)
     let paraph = NSMutableParagraphStyle()
     paraph.lineSpacing = lineSpace
     paraph.paragraphSpacing = 0
-    return text.boundingRect(with: maxSize, options: [NSStringDrawingOptions.usesLineFragmentOrigin], attributes: [NSAttributedStringKey.font: font, NSAttributedStringKey.paragraphStyle: paraph], context: nil).size
+    return text.boundingRect(with: maxSize, options: [NSStringDrawingOptions.usesLineFragmentOrigin], attributes: [NSAttributedString.Key.font: font, NSAttributedString.Key.paragraphStyle: paraph], context: nil).size
 }

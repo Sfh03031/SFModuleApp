@@ -37,7 +37,7 @@ class SFFoucsFlowLayoutVC: BaseViewController {
         
         let view = UICollectionView.init(frame: CGRectZero, collectionViewLayout: layout)
         view.backgroundColor = UIColor.sf.hexColor(hex: "#f5f6f9")
-        view.decelerationRate = UIScrollViewDecelerationRateFast//滚动衰减速率
+        view.decelerationRate = UIScrollView.DecelerationRate.fast//滚动衰减速率
         view.showsHorizontalScrollIndicator = false
         view.showsVerticalScrollIndicator = false
         //MARK: 开启了PagingEnabled，行/列间距设置为0，否则滑动cell会有偏移量
@@ -45,7 +45,7 @@ class SFFoucsFlowLayoutVC: BaseViewController {
         view.delegate = self
         view.dataSource = self
         view.register(AnimatedLayoutCell.self, forCellWithReuseIdentifier: NSStringFromClass(AnimatedLayoutCell.self))
-        view.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerId")
+        view.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
         if #available(iOS 11.0, *) {
             view.contentInsetAdjustmentBehavior = .never
         }

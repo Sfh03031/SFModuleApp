@@ -12,5 +12,6 @@
 #import "CYLPlusButton.h"
 
 #import "VNBRluerPicker.h"
+#import "ZXYFileEncrypt.h"
 
 //#import "PYSearch"

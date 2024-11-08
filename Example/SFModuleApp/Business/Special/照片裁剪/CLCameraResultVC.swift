@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import ScreenRotator
 
 class CLCameraResultVC: BaseViewController {
 
     var image: UIImage?
     var intrStr: String?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "结果"

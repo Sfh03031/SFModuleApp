@@ -40,13 +40,13 @@ class UPCarouselVC: BaseViewController {
         view.backgroundColor = .hex_F5F6F9
         view.showsHorizontalScrollIndicator = false
         view.showsVerticalScrollIndicator = false
-        view.decelerationRate = UIScrollViewDecelerationRateFast
+        view.decelerationRate = UIScrollView.DecelerationRate.fast
         //MARK: 开启了PagingEnabled，行/列间距设置为0，否则滑动cell会有偏移量
 //        view.isPagingEnabled = true
         view.delegate = self
         view.dataSource = self
         view.register(UPCarouselCell.self, forCellWithReuseIdentifier: NSStringFromClass(UPCarouselCell.self))
-        view.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerId")
+        view.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
         if #available(iOS 11.0, *) {
             view.contentInsetAdjustmentBehavior = .never
         }

@@ -85,12 +85,12 @@ class LFLiveKitVC: UIViewController {
     @objc func didTappedStartLiveButton(_ button: UIButton) -> Void {
         startLiveButton.isSelected = !startLiveButton.isSelected;
         if (startLiveButton.isSelected) {
-            startLiveButton.setTitle("结束直播", for: UIControlState())
+            startLiveButton.setTitle("结束直播", for: .normal)
             let stream = LFLiveStreamInfo()
             stream.url = "rtmp://live.hkstv.hk.lxdns.com:1935/live/stream153"
             session.startLive(stream)
         } else {
-            startLiveButton.setTitle("开始直播", for: UIControlState())
+            startLiveButton.setTitle("开始直播", for: .normal)
             session.stopLive()
         }
     }
@@ -223,7 +223,7 @@ class LFLiveKitVC: UIViewController {
     var containerView: UIView = {
         let containerView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         containerView.backgroundColor = UIColor.clear
-        containerView.autoresizingMask = [UIViewAutoresizing.flexibleHeight, UIViewAutoresizing.flexibleHeight]
+        containerView.autoresizingMask = [UIView.AutoresizingMask.flexibleHeight, UIView.AutoresizingMask.flexibleHeight]
         return containerView
     }()
     
@@ -239,7 +239,7 @@ class LFLiveKitVC: UIViewController {
     // 关闭按钮
     lazy var closeButton: UIButton = {
         let btn = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 10 - 44, y: TopStatusBar + 10, width: 44, height: 44))
-        btn.setImage(UIImage(named: "close_preview"), for: UIControlState())
+        btn.setImage(UIImage(named: "close_preview"), for: .normal)
         btn.addTarget(self, action: #selector(didTappedCloseButton(_:)), for:.touchUpInside)
         return btn
     }()
@@ -247,7 +247,7 @@ class LFLiveKitVC: UIViewController {
     // 摄像头
     lazy var cameraButton: UIButton = {
         let btn = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 54 * 2, y: TopStatusBar + 10, width: 44, height: 44))
-        btn.setImage(UIImage(named: "camra_preview"), for: UIControlState())
+        btn.setImage(UIImage(named: "camra_preview"), for: .normal)
         btn.addTarget(self, action: #selector(didTappedCameraButton(_:)), for:.touchUpInside)
         return btn
     }()
@@ -255,8 +255,8 @@ class LFLiveKitVC: UIViewController {
     // 摄像头
     lazy var beautyButton: UIButton = {
         let btn = UIButton(frame: CGRect(x: UIScreen.main.bounds.width - 54 * 3, y: TopStatusBar + 10, width: 44, height: 44))
-        btn.setImage(UIImage(named: "camra_beauty"), for: UIControlState.selected)
-        btn.setImage(UIImage(named: "camra_beauty_close"), for: UIControlState())
+        btn.setImage(UIImage(named: "camra_beauty"), for: UIControl.State.selected)
+        btn.setImage(UIImage(named: "camra_beauty_close"), for: .normal)
         btn.addTarget(self, action: #selector(didTappedBeautyButton(_:)), for: .touchUpInside)
         return btn
     }()

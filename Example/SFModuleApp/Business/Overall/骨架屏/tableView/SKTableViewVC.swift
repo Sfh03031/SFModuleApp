@@ -14,7 +14,7 @@ class SKTableViewVC: BaseViewController {
 
     var isShowAni:Bool = false
     private var items = [Any?]()
-    private let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .medium)
+    private let activityIndicator = UIActivityIndicatorView(style: .medium)
     private let animations = [AnimationType.vector(CGVector(dx: 0, dy: 30))]
     
     override func viewDidLoad() {
@@ -91,8 +91,8 @@ class SKTableViewVC: BaseViewController {
         tabView.showsVerticalScrollIndicator = false
         tabView.delegate = self
         tabView.dataSource = self
-        tabView.sectionHeaderHeight = UITableViewAutomaticDimension
-        tabView.sectionFooterHeight = UITableViewAutomaticDimension
+        tabView.sectionHeaderHeight = UITableView.automaticDimension
+        tabView.sectionFooterHeight = UITableView.automaticDimension
         tabView.estimatedRowHeight = 120.0
         tabView.estimatedSectionFooterHeight = 20.0
         tabView.estimatedSectionHeaderHeight = 20.0
@@ -173,7 +173,7 @@ extension SKTableViewVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

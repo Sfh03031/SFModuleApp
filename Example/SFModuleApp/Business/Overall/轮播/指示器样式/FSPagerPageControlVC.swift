@@ -8,6 +8,7 @@
 
 import UIKit
 import FSPagerView
+import JXPagingView
 
 class FSPagerPageControlVC: BaseViewController {
     var listViewDidScrollCallback: ((UIScrollView) -> ())?

@@ -8,6 +8,7 @@
 
 import AMPopTip
 import UIKit
+import JohnWick
 
 class PopTipVC: BaseViewController {
     enum ButtonType: Int {
@@ -60,23 +61,23 @@ class PopTipVC: BaseViewController {
         popTip.actionAnimation = .none
         
         popTip.tapHandler = { _ in
-            print("tap")
+            SFLog("tap")
         }
 
         popTip.tapOutsideHandler = { _ in
-            print("tap outside")
+            SFLog("tap outside")
         }
         
         popTip.tapCutoutHandler = { _ in
-            print("tap cutout")
+            SFLog("tap cutout")
         }
 
         popTip.swipeOutsideHandler = { _ in
-            print("swipe outside")
+            SFLog("swipe outside")
         }
 
         popTip.dismissHandler = { _ in
-            print("dismiss")
+            SFLog("dismiss")
         }
         
         autolayoutView = Bundle.main.loadNibNamed(String(describing: AutolayoutView.self), owner: self, options: nil)?.first as? UIView
@@ -181,7 +182,7 @@ class PopTipVC: BaseViewController {
             let underline: [NSAttributedString.Key: Any] = [
                 .font: UIFont.systemFont(ofSize: 13),
                 .foregroundColor: UIColor.white,
-                .underlineStyle: NSUnderlineStyle.styleSingle.rawValue
+                .underlineStyle: NSUnderlineStyle.single.rawValue
             ]
             
             let attributedText = NSMutableAttributedString(string: "I'm presenting a string ", attributes: attributes)

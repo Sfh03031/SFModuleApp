@@ -120,9 +120,9 @@ class BaseNavigationController: UINavigationController {
         if SVProgressHUD.isVisible() {
             SVProgressHUD.dismiss()
         }
-        if UIApplication.shared.isNetworkActivityIndicatorVisible {
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        }
+//        if UIApplication.shared.isNetworkActivityIndicatorVisible {
+//            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+//        }
         popViewController(animated: true)
     }
 
@@ -135,12 +135,12 @@ extension BaseNavigationController: UINavigationControllerDelegate {
         self.isPushing = false
     }
     
-    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationControllerOperation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         
         //FIXME: CKWaveCollectionViewTransition过渡动画，适用于UICollectionViewController跳转UICollectionViewController
         if fromVC.isKind(of: UICollectionViewController.self) && toVC.isKind(of: UICollectionViewController.self) {
             let animator = CKWaveCollectionViewAnimator()
-            animator.animationDuration = 0.7
+            animator.animationDuration = 0.5
             
             if operation != UINavigationController.Operation.push {
                 animator.reversed = true

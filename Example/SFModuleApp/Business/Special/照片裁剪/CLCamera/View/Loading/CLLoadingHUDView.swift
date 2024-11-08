@@ -37,10 +37,10 @@ class CLLoadingHUDView: UIView {
     }()
 
     private lazy var activityIndicator: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        let view = UIActivityIndicatorView(style: .medium)
         view.hidesWhenStopped = true
         view.tintColor = .white
-        view.activityIndicatorViewStyle = .whiteLarge
+        view.style = .large
         return view
     }()
 

@@ -28,7 +28,7 @@ class CLCameraHelper: NSObject {
     }
 
     deinit {
-        try? AVAudioSession.sharedInstance().setActive(false, with: .notifyOthersOnDeactivation)
+        try? AVAudioSession.sharedInstance().setActive(false, options: .notifyOthersOnDeactivation)
     }
 
     weak var delegate: CLCameraHelperDelegate?
@@ -50,7 +50,7 @@ class CLCameraHelper: NSObject {
 
 private extension CLCameraHelper {
     func initializeCameraSession() {
-        try? AVAudioSession.sharedInstance().setActive(true, with: .notifyOthersOnDeactivation)
+        try? AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
         orientation.delegate = self
         sessionQueue.async { [weak self] in
             self?.setupCapture()
@@ -76,7 +76,7 @@ private extension CLCameraHelper {
             captureSession.addOutput(photoOutput)
         }
 
-        movieFileOutput.movieFragmentInterval = kCMTimeInvalid
+        movieFileOutput.movieFragmentInterval = CMTime.invalid
         if captureSession.canAddOutput(movieFileOutput) {
             captureSession.addOutput(movieFileOutput)
         }

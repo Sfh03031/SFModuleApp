@@ -974,7 +974,7 @@ extension GeneratorController: UIPopoverPresentationControllerDelegate, EFColorS
         navCtrl.popoverPresentationController?.sourceView = tableView
         navCtrl.popoverPresentationController?.sourceRect = tableView.bounds
         navCtrl.preferredContentSize = colorSelectionController.view.systemLayoutSizeFitting(
-            UILayoutFittingCompressedSize
+            UIView.layoutFittingCompressedSize
         )
 
         colorSelectionController.isColorTextFieldHidden = false
@@ -1018,12 +1018,12 @@ extension GeneratorController: UIImagePickerControllerDelegate {
         picker.dismiss(animated: true)
     }
 
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    private func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
 
         var finalImage: UIImage?
-        if let tryImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+        if let tryImage = info[UIImagePickerController.InfoKey.editedImage.rawValue] as? UIImage {
             finalImage = tryImage
-        } else if let tryImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        } else if let tryImage = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage {
             finalImage = tryImage
         } else {
             print(Localized.errored)
@@ -1038,7 +1038,7 @@ extension GeneratorController: UIImagePickerControllerDelegate {
             }
             
             var images = [Ref<EFImage?>]()
-            if let imageUrl = info[UIImagePickerControllerReferenceURL] as? URL,
+            if let imageUrl = info[UIImagePickerController.InfoKey.referenceURL.rawValue] as? URL,
                 let asset = PHAsset.fetchAssets(withALAssetURLs: [imageUrl], options: nil).lastObject {
                 images = selectedAlbumPhotosIncludingGifWithPHAssets(assets: [asset])
             }

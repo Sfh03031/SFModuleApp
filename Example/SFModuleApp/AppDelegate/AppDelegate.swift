@@ -7,36 +7,23 @@
 //
 
 import UIKit
-import SFBackgroundTaskManager
-
-/// 全局引用
-@_exported import SFStyleKit
-@_exported import LottieService
-@_exported import SnapKit
-@_exported import SVProgressHUD
-@_exported import Kingfisher
-@_exported import Lottie
-@_exported import SwiftyJSON
-@_exported import HandyJSON
-@_exported import CYLTabBarController
-@_exported import ScreenRotator
-@_exported import JXPagingView
-@_exported import JXSegmentedView
-@_exported import Watchdog
+import Watchdog
+import SFServiceKit
+import ScreenRotator
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    // 看门狗
     var watchdog: Watchdog!
-    
-    /// tabbar
+    // tabbar模型
     var tabModel: tabInfoModel?
-    
+    // 双指动画
     var transitionHandle: Gagat.TransitionHandle!
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         // 看门狗
         ConfigWatchdog()

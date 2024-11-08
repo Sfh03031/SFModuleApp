@@ -49,7 +49,7 @@ private let requestClosure = { (endpoint: Endpoint, done: @escaping MoyaProvider
         // 设置请求时长
         request.timeoutInterval = timeoutInterval
 
-        #if DEBUG
+#if DEBUG
         // 打印请求参数
         if let requestData = request.httpBody {
             print("请求地址: \(request.url!)" + "\n请求方法: " + "\(String(describing: request.httpMethod))" + "\n请求参数: " + "\(String(data: request.httpBody!, encoding: String.Encoding.utf8) ?? "")")
@@ -60,7 +60,7 @@ private let requestClosure = { (endpoint: Endpoint, done: @escaping MoyaProvider
         if let header = request.allHTTPHeaderFields {
             print("请求头内容\(header)")
         }
-        #endif
+#endif
 
         done(.success(request))
     } catch {
@@ -71,7 +71,7 @@ private let requestClosure = { (endpoint: Endpoint, done: @escaping MoyaProvider
 public class SFNetworkManager: NSObject {
 
     /// 进度回调，默认为nil
-    typealias progressBlock = (CGFloat) -> Void
+    public typealias progressBlock = (CGFloat) -> Void
 
     /// 创建请求对象
     static let APIProvider = MoyaProvider<MultiTarget>(endpointClosure: endpointClosure, requestClosure: requestClosure, plugins: [IndicatorPlugin()], trackInflights: false)
@@ -85,7 +85,7 @@ public class SFNetworkManager: NSObject {
     ///   - progress: 请求进度，默认为nil
     ///   - success: 成功的回调，接口返回值中的msg和body转换后的model
     ///   - failure: 失败的回调，返回错误信息
-    static func request<T: HandyJSON>(target: TargetType,
+    public static func request<T: HandyJSON>(target: TargetType,
                                              modelType: T.Type,
                                              isLoading: Bool = true,
                                              progress: progressBlock? = nil,

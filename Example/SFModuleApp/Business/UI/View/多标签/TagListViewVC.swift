@@ -13,7 +13,6 @@ import SFStyleKit
 class TagListViewVC: BaseViewController {
     
     var tapIndex: Int = -1
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +31,7 @@ class TagListViewVC: BaseViewController {
 
     lazy var tagListView: TagListView = {
         let view = TagListView(frame: CGRectMake(15, 54, SCREENW - 30, 0))
-        view.tagBackgroundColor = .orange
+        view.tagBackgroundColor = .hex_41555d
         view.tagSelectedBackgroundColor = .hex_008AFF
         view.textColor = .red
         view.selectedTextColor = .white

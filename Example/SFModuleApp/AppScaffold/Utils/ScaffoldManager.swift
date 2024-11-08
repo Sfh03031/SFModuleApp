@@ -10,6 +10,8 @@ import UIKit
 import Toast_Swift
 import WhatsNew
 import PopMenu
+import ScreenRotator
+import JohnWick
 
 public class ScaffoldManager: NSObject {
 
@@ -63,10 +65,10 @@ public class ScaffoldManager: NSObject {
                 }
                 
             }
-        case 4:
-            let vc = ColorsVC()
-            vc.title = name
-            self?.sf.push(vc)
+//        case 4:
+//            let vc = ColorsVC()
+//            vc.title = name
+//            self?.sf.push(vc)
         case 5:
             let vc = SLB_LearnDataVC()
             vc.title = name
@@ -130,12 +132,12 @@ public class ScaffoldManager: NSObject {
             if UIApplication.shared.canOpenURL(URL.init(string: url)!) {
                 UIApplication.shared.open(URL.init(string: url)!)
             } else {
-                WINDOW?.makeToast("模块缺失", position: .center)
+                SF.WINDOW?.makeToast("模块缺失", position: .center)
             }
-        case 20:
-            let vc = NVActivityIndicatorViewVC()
-            vc.title = name
-            self?.sf.push(vc)
+//        case 20:
+//            let vc = NVActivityIndicatorViewVC()
+//            vc.title = name
+//            self?.sf.push(vc)
         case 21:
             let vc = DemoListViewController()
             vc.title = name
@@ -213,7 +215,7 @@ public class ScaffoldManager: NSObject {
             if UIApplication.shared.canOpenURL(URL.init(string: url)!) {
                 UIApplication.shared.open(URL.init(string: url)!)
             } else {
-                WINDOW?.makeToast("模块缺失", position: .center)
+                SF.WINDOW?.makeToast("模块缺失", position: .center)
             }
         case 36:
             let vc = LFLiveKitVC()
@@ -372,15 +374,39 @@ public class ScaffoldManager: NSObject {
             vc.title = name
             self?.sf.push(vc)
         case 72:
-            let vc = BackgroundTaskVC()
+            let vc = BgTaskVC()
             vc.title = name
             self?.sf.push(vc)
         case 73:
-            let vc = PerformanceMonitorVC()
+            let vc = PerfMonitorVC()
             vc.title = name
             self?.sf.push(vc)
         case 74:
             let vc = PYSearchExampleVC()
+            vc.title = name
+            self?.sf.push(vc)
+        case 75:
+            let vc = FontsVC()
+            vc.title = "Font"
+            self?.sf.push(vc)
+        case 76:
+            let vc = FilePickerVC()
+            vc.title = name
+            self?.sf.push(vc)
+        case 77:
+            let vc = AddressPickerVC()
+            vc.title = name
+            self?.sf.push(vc)
+        case 78:
+            let vc = DatePickerVC()
+            vc.title = name
+            self?.sf.push(vc)
+        case 79:
+            let vc = TagPickerVC()
+            vc.title = name
+            self?.sf.push(vc)
+        case 80:
+            let vc = SelfDefineVC()
             vc.title = name
             self?.sf.push(vc)
         default:

@@ -8,6 +8,7 @@
 
 import UIKit
 import Twinkle
+import Splitflap
 
 class SplitflapVC: BaseViewController {
     fileprivate let words = ["Hey you", "Bonsoir", "12h15", "Arrival", "Fuck off man"]

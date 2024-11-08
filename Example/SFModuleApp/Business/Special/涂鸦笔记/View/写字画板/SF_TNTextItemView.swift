@@ -97,7 +97,7 @@ class SF_TNTextItemView: UIView {
         view.layer.borderColor = UIColor.white.withAlphaComponent(0.2).cgColor
         view.isScrollEnabled = false
 //        view.shouldIgnoreScrollingAdjustment = true
-        view.textContainerInset = UIEdgeInsetsMake(5, 10, 5, 10)
+        view.textContainerInset = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
         view.textContainer.lineFragmentPadding = 0
         view.showsVerticalScrollIndicator = false
         view.showsHorizontalScrollIndicator = false

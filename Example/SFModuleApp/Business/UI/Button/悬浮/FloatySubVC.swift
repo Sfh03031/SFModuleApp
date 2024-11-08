@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Floaty
 
 class FloatySubVC: BaseViewController {
     
@@ -54,27 +55,27 @@ class FloatySubVC: BaseViewController {
             floaty.paddingY = 100
         }
         
-        if index == 7 {
-            floaty.isDraggable = true
-            floaty.openAnimationType = .quadCircular // 扇形
-            floaty.circleAnimationDegreeOffset = 0 // 水平角度偏移量
-            floaty.circleAnimationRadius = 250 // 扇形半径
-            floaty.paddingY = SoftHeight + 20
-            floaty.paddingX = 20
-        }
-        
-        if index == 8 {
-            floaty.isDraggable = true
-            floaty.openAnimationType = .semiCircular // 半环形
-            floaty.circleAnimationDegreeOffset = 10 // 水平角度偏移量
-            floaty.paddingY = (SCREENH - TopHeight - SoftHeight - 60) / 2
-        }
-        
-        if index == 9 {
-            floaty.isDraggable = true
-            floaty.openAnimationType = .fullCircular // 全环形
-            floaty.paddingY = (SCREENH - TopHeight - SoftHeight - 60) / 2
-        }
+//        if index == 7 {
+//            floaty.isDraggable = true
+//            floaty.openAnimationType = .quadCircular // 扇形
+//            floaty.circleAnimationDegreeOffset = 0 // 水平角度偏移量
+//            floaty.circleAnimationRadius = 250 // 扇形半径
+//            floaty.paddingY = SoftHeight + 20
+//            floaty.paddingX = 20
+//        }
+//        
+//        if index == 8 {
+//            floaty.isDraggable = true
+//            floaty.openAnimationType = .semiCircular // 半环形
+//            floaty.circleAnimationDegreeOffset = 10 // 水平角度偏移量
+//            floaty.paddingY = (SCREENH - TopHeight - SoftHeight - 60) / 2
+//        }
+//        
+//        if index == 9 {
+//            floaty.isDraggable = true
+//            floaty.openAnimationType = .fullCircular // 全环形
+//            floaty.paddingY = (SCREENH - TopHeight - SoftHeight - 60) / 2
+//        }
         
         floaty.addItem(icon: SFSymbol.symbol(name: "figure.american.football"))
         floaty.addItem(title: "只有文字")
@@ -88,13 +89,13 @@ class FloatySubVC: BaseViewController {
         
         let item2 = FloatyItem()
         item2.title = "文字在上"
-        item2.titleLabelPosition = .top
+        item2.titleLabelPosition = .left
         item2.icon = SFSymbol.symbol(name: "signature")
         floaty.addItem(item: item2)
         
         let item3 = FloatyItem()
         item3.title = "文字在下"
-        item3.titleLabelPosition = .bottom
+        item3.titleLabelPosition = .right
         item3.icon = SFSymbol.symbol(name: "command")
         floaty.addItem(item: item3)
         

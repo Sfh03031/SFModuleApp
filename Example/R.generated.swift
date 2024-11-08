@@ -845,9 +845,6 @@ struct _R {
     /// Resource file `OpenSans-SemiboldItalic.ttf`.
     var openSansSemiboldItalicTtf: RswiftResources.FileResource { .init(name: "OpenSans-SemiboldItalic", pathExtension: "ttf", bundle: bundle, locale: LocaleReference.none) }
 
-    /// Resource file `WCLShineButton.bundle`.
-    var wclShineButtonBundle: RswiftResources.FileResource { .init(name: "WCLShineButton", pathExtension: "bundle", bundle: bundle, locale: LocaleReference.none) }
-
     /// Resource file `appicon_1024.png`.
     var appicon_1024Png: RswiftResources.FileResource { .init(name: "appicon_1024", pathExtension: "png", bundle: bundle, locale: LocaleReference.none) }
 
@@ -1141,6 +1138,9 @@ struct _R {
 
     /// Resource file `二icon.png`.
     var 二iconPng: RswiftResources.FileResource { .init(name: "二icon", pathExtension: "png", bundle: bundle, locale: LocaleReference.none) }
+
+    /// Resource file `测试视频文件.mp4`.
+    var 测试视频文件Mp4: RswiftResources.FileResource { .init(name: "测试视频文件", pathExtension: "mp4", bundle: bundle, locale: LocaleReference.none) }
   }
 
   /// This `_R.nib` struct is generated, and contains static references to 42 nibs.

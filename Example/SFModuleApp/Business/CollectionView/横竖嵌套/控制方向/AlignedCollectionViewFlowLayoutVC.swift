@@ -63,7 +63,7 @@ class AlignedCollectionViewFlowLayoutVC: BaseViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(AnimatedLayoutCell.self, forCellWithReuseIdentifier: String(describing: AnimatedLayoutCell.self))
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "header")
+        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "header")
         return collectionView
     }()
     
@@ -113,7 +113,7 @@ extension AlignedCollectionViewFlowLayoutVC: UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        if kind == UICollectionElementKindSectionHeader {
+        if kind == UICollectionView.elementKindSectionHeader {
             let header:UICollectionReusableView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "header", for: indexPath)
             
             header.backgroundColor = .white

@@ -116,7 +116,7 @@ extension ExpandLabelVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -173,7 +173,7 @@ extension ExpandLabelVC: ExpandableLabelDelegate {
 extension String {
     
     func specialPriceAttributedStringWith(_ color: UIColor) -> NSMutableAttributedString {
-        let attributes = [NSAttributedString.Key.strikethroughStyle: NSNumber(value: NSUnderlineStyle.styleSingle.rawValue as Int),
+        let attributes = [NSAttributedString.Key.strikethroughStyle: NSNumber(value: NSUnderlineStyle.single.rawValue as Int),
                           .foregroundColor: color, .font: fontForPrice()]
         return NSMutableAttributedString(attributedString: NSAttributedString(string: self, attributes: attributes))
     }

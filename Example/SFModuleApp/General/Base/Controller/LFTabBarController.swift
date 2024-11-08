@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import LottieService
+
 //extension UITabBar {
 //    //让图片和文字在iOS11下仍然保持上下排列
 //    override open var traitCollection: UITraitCollection {
@@ -82,16 +84,16 @@ class LFTabBarController: UITabBarController {
      */
     private func addChildViewControllers() {
 
-        let HomePageV = AlphaVC()
+        let HomePageV = AlphaMainVC(collectionViewLayout: FlowLayoutManager.shared.makeFlowLayout())
         addChildViewController(childController: HomePageV, title: "首页", imageName: "home_normal", selectedImage:"home_selected")
         
-        let StudyV = BroveVC()
+        let StudyV = BroveMainVC(collectionViewLayout: FlowLayoutManager.shared.makeFlowLayout())
         addChildViewController(childController:StudyV, title: "学习", imageName: "study_normal",selectedImage:"study_selected")
         
-        let bookVc = DeltaVC()
+        let bookVc = DeltaMainVC(collectionViewLayout: FlowLayoutManager.shared.makeFlowLayout())
         addChildViewController(childController: bookVc, title: "书城", imageName: "book_normal", selectedImage: "book_selected")
         
-        let MyView = EpsilonVC()
+        let MyView = EpsilonMainVC(collectionViewLayout: FlowLayoutManager.shared.makeFlowLayout())
         addChildViewController(childController:MyView, title: "我的", imageName: "mine_normal",selectedImage:"mine_selected")
     }
     /**
@@ -106,7 +108,7 @@ class LFTabBarController: UITabBarController {
         childController.tabBarItem.selectedImage = UIImage(named: selectedImage)?.withRenderingMode(.alwaysOriginal)
         childController.title = title
         let navC = LFNavigationController(rootViewController: childController)
-        addChildViewController(navC)
+        addChild(navC)
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -175,7 +177,7 @@ extension LFTabBarController: UITabBarControllerDelegate{
         }
         
     //        1. 获取当前点击的是第几个
-        let index = tabBarVC.viewControllers?.index(of: viewController)
+        let index = tabBarVC.viewControllers?.firstIndex(of: viewController)
         var tabBarSwappableImageViews = [UIImageView]()
         
     //        2.遍历取出所有的 tabBarButton

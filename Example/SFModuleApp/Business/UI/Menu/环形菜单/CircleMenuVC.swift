@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CircleMenu
 
 class CircleMenuVC: BaseViewController {
     

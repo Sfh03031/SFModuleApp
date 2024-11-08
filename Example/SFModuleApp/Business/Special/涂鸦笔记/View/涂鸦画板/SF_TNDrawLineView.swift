@@ -121,8 +121,8 @@ class SF_TNDrawLineView: UIView {
                 slayer.path = path.cgPath
                 slayer.backgroundColor = UIColor.clear.cgColor
                 slayer.fillColor = UIColor.clear.cgColor
-                slayer.lineCap = kCALineCapRound
-                slayer.lineJoin = kCALineJoinRound
+                slayer.lineCap = CAShapeLayerLineCap.round
+                slayer.lineJoin = CAShapeLayerLineJoin.round
                 slayer.strokeColor = self.TNColor.cgColor
                 slayer.lineWidth = path.lineWidth
                 self.layer.addSublayer(slayer)

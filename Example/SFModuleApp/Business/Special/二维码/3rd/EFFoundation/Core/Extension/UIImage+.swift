@@ -79,11 +79,11 @@ public extension UIImage {
 
     var png: Data? {
         
-        return UIImagePNGRepresentation(self)
+        return self.pngData()
     }
 
     func jpg(compressionQuality: CGFloat = 1) -> Data? {
-        return UIImageJPEGRepresentation(self, compressionQuality)
+        return self.jpegData(compressionQuality: compressionQuality)
     }
 
     func resize(size: CGSize) -> UIImage? {

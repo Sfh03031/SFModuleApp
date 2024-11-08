@@ -25,7 +25,7 @@ class SparkViewsService: LYEmptyView {
     }
     
     static func getEmptyView() -> LYEmptyView {
-        return LYEmptyView.emptyView(withCustomView: SparkEmptyView())
+        return LYEmptyView.emptyView(withCustomView: SparkEmptyView.init(frame: CGRect(x: 0, y: 0, width: SCREENW, height: SCREENH)))
     }
     
     static func getNoNetView() -> LYEmptyView {

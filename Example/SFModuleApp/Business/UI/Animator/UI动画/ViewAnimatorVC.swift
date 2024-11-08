@@ -46,8 +46,8 @@ class ViewAnimatorVC: BaseViewController {
         tabView.backgroundColor = .lightGray
         tabView.showsVerticalScrollIndicator = false
         tabView.dataSource = self
-        tabView.sectionHeaderHeight = UITableViewAutomaticDimension
-        tabView.sectionFooterHeight = UITableViewAutomaticDimension
+        tabView.sectionHeaderHeight = UITableView.automaticDimension
+        tabView.sectionFooterHeight = UITableView.automaticDimension
         tabView.estimatedRowHeight = 120.0
         tabView.estimatedSectionFooterHeight = 20.0
         tabView.estimatedSectionHeaderHeight = 20.0

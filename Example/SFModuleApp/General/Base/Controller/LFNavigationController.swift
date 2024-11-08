@@ -129,11 +129,11 @@ class LFNavigationController: UINavigationController, UINavigationControllerDele
         return self.topViewController!.preferredInterfaceOrientationForPresentation
     }
 
-    override var childViewControllerForStatusBarStyle: UIViewController?{
+    override var childForStatusBarStyle: UIViewController?{
          return self.topViewController
     }
      
-    override var childViewControllerForStatusBarHidden: UIViewController?{
+    override var childForStatusBarHidden: UIViewController?{
          return self.topViewController
     }
     /*

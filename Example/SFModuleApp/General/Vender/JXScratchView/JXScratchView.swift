@@ -17,7 +17,7 @@ open class JXScratchView: UIView {
     open weak var delegate: JXScratchViewDelegate?
     open var scratchContentView: UIView!
     open var scratchMaskView: UIView!
-    open var strokeLineCap: String = kCALineCapRound {
+    open var strokeLineCap: CAShapeLayerLineCap = .round {
         didSet {
             maskLayer.lineCap = strokeLineCap
         }

@@ -90,7 +90,7 @@ public class MCClipImageViewController: UIViewController {
         path.append(overlayPath)
 
         shapeLayer.path = path.cgPath
-        shapeLayer.fillRule = kCAFillRuleEvenOdd
+        shapeLayer.fillRule = CAShapeLayerFillRule.evenOdd
         containerView.layer.mask = shapeLayer
     }
 
@@ -171,7 +171,7 @@ extension MCClipImageViewController {
     // 确定
     @objc func sureButtonClicked() {
         let image = getClippingImage()
-        let data = compressImage(image, toKB: 900) ?? UIImageJPEGRepresentation(image, 0.2)
+        let data = compressImage(image, toKB: 900) ?? image.jpegData(compressionQuality: 0.2)
         saveImageToPhotosAlbum(image: image)
         delegate?.clipImageViewController(self, didFinishClipingImage: image, data: data!)
 //        dismiss(animated: true, completion: nil)
@@ -321,11 +321,11 @@ extension MCClipImageViewController {
     func compressImage(_ image: UIImage, toKB fileSize: Int) -> Data? {
         let bytes = fileSize * 1024
         var compression: CGFloat = 1.0
-        var imageData = UIImageJPEGRepresentation(image, compression)
+        var imageData = image.jpegData(compressionQuality: compression)
         
         while (imageData?.count ?? 0) > bytes && compression > 0 {
             compression -= 0.1
-            imageData = UIImageJPEGRepresentation(image, compression)
+            imageData = image.jpegData(compressionQuality: compression)
         }
         
         if let data = imageData {
@@ -434,7 +434,7 @@ private var selfHeight = UIScreen.main.bounds.size.height
 
 // Helper function inserted by Swift 4.2 migrator.
 private func convertToCAShapeLayerFillRule(_ input: String) -> CAShapeLayerFillRule {
-    CAShapeLayerFillRule(string: input)
+    CAShapeLayerFillRule(rawValue: input)
 }
 
 extension UIImage {

@@ -108,12 +108,12 @@ public class PhotoLibraryViewController: UIViewController {
 
     func showSpinner() {
         spinner = UIActivityIndicatorView()
-        spinner!.activityIndicatorViewStyle = .white
+        spinner!.style = .medium
         spinner!.center = view.center
         spinner!.startAnimating()
 
         view.addSubview(spinner!)
-        view.bringSubview(toFront: spinner!)
+        view.bringSubviewToFront(spinner!)
     }
 
     func hideSpinner() {

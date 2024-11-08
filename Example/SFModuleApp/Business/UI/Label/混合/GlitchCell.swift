@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GlitchLabel
 
 class GlitchCell: BaseCollectionViewCell {
     

@@ -8,7 +8,7 @@
 
 import UIKit
 
-//MARK: - 系统Api支持
+// MARK: 系统Api支持
 
 public extension SFExStyle where Base: UITableView {
     
@@ -399,4 +399,20 @@ public extension SFExStyle where Base: UITableView {
         return self
     }
     
+}
+
+
+public extension SFExStyle where Base: UITableView {
+    
+    @discardableResult
+    func registerNib<T: UITableViewCell>(_: T.Type) -> SFExStyle {
+        let nib = UINib(nibName: String(describing: T.self), bundle: nil)
+        base.register(nib, forCellReuseIdentifier: String(describing: T.self))
+        return self
+    }
+    
+    func registerClass<T: UITableViewCell>(_: T.Type) -> SFExStyle {
+        base.register(T.self, forCellReuseIdentifier: String(describing: T.self))
+        return self
+    }
 }

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TKSwitcherCollection
 
 class SwitchListVC: BaseViewController {
 

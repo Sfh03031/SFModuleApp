@@ -7,6 +7,7 @@ PODS:
   - AnimatedCollectionViewLayout (1.0.1)
   - Aspects (1.4.1)
   - BouncyLayout (2.3.0)
+  - CircleMenu (4.1.0)
   - CryptoSwift (1.8.2)
   - CTMediator (48)
   - CYLTabBarController/Core (1.29.2)
@@ -29,11 +30,14 @@ PODS:
   - FlagKit (2.2)
   - FLAnimatedImage (1.0.17)
   - FLEX (5.22.10)
+  - Floaty (4.2.0)
+  - FoldingCell (5.0.2)
   - FontBlaster (5.3.0)
   - FSCalendar (2.8.4)
   - FSPagerView (0.8.3)
   - FSTextView (1.8)
   - GDPerformanceView-Swift (2.1.1)
+  - GlitchLabel (2.1.0)
   - GradientLoadingBar (2.3.5):
     - LightweightObservable (~> 2.1)
   - GravitySliderFlowLayout (1.0)
@@ -83,6 +87,22 @@ PODS:
     - IGListDiffKit (= 4.0.0)
   - Instructions (2.3.0)
   - IQKeyboardManagerSwift (6.5.16)
+  - JohnWick (0.1.1):
+    - CTMediator
+    - Haptica
+    - JXPhotoBrowser
+    - Kingfisher
+    - MJRefresh
+    - ProgressHUD (~> 14.1.1)
+    - RxCocoa
+    - RxSwift
+    - SFStyleKit/Core
+    - SnapKit
+    - SwiftDate
+    - SwiftMessages
+    - swiftScan
+    - TagListView
+    - Toast-Swift
   - JXPagingView (2.1.3):
     - JXPagingView/Pager (= 2.1.3)
     - JXPagingView/Paging (= 2.1.3)
@@ -126,11 +146,11 @@ PODS:
   - NotificationBannerSwift (3.2.1):
     - MarqueeLabel (~> 4.3.0)
     - SnapKit (~> 5.6.0)
-  - NumberMorphView (0.2.0)
   - NVActivityIndicatorView (5.2.0):
     - NVActivityIndicatorView/Base (= 5.2.0)
   - NVActivityIndicatorView/Base (5.2.0)
   - pop (1.0.12)
+  - ProgressHUD (14.1.1)
   - PromiseKit (8.1.1):
     - PromiseKit/CorePromise (= 8.1.1)
     - PromiseKit/Foundation (= 8.1.1)
@@ -143,7 +163,7 @@ PODS:
   - Pulsator (0.6.0)
   - PYSearch (0.9.1)
   - R.swift (7.3.2)
-  - ReachabilitySwift (5.2.1)
+  - ReachabilitySwift (5.2.4)
   - RxCocoa (6.6.0):
     - RxRelay (= 6.6.0)
     - RxSwift (= 6.6.0)
@@ -151,18 +171,46 @@ PODS:
     - RxSwift (= 6.6.0)
   - RxSwift (6.6.0)
   - ScreenRotator (0.1.0)
-  - SFBackgroundTaskManager (0.1.0)
+  - SFCircleProgressView (0.1.3)
   - SFFocusViewLayout (3.2.0)
   - SFModuleApp (0.1.0)
-  - SFNetworkManager (0.1.1):
+  - SFNetworkManager (0.1.3):
     - HandyJSON
     - Moya
-  - SFNetworkMonitor (0.1.2):
+    - NVActivityIndicatorView
+    - SFNetworkMonitor (~> 0.1.6)
+  - SFNetworkMonitor (0.1.6):
     - ReachabilitySwift
-  - SFStyleKit (0.1.2)
+  - SFServiceKit (0.1.7):
+    - SFServiceKit/Full (= 0.1.7)
+  - SFServiceKit/Author (0.1.7)
+  - SFServiceKit/Bgtask (0.1.7)
+  - SFServiceKit/Display (0.1.7)
+  - SFServiceKit/File (0.1.7)
+  - SFServiceKit/Full (0.1.7):
+    - SFServiceKit/Author
+    - SFServiceKit/Bgtask
+    - SFServiceKit/Display
+    - SFServiceKit/File
+    - SFServiceKit/IAP
+    - SFServiceKit/IBeacon
+    - SFServiceKit/Language
+    - SFServiceKit/Location
+    - SFServiceKit/Symbol
+    - SFServiceKit/Timer
+  - SFServiceKit/IAP (0.1.7)
+  - SFServiceKit/IBeacon (0.1.7)
+  - SFServiceKit/Language (0.1.7)
+  - SFServiceKit/Location (0.1.7)
+  - SFServiceKit/Symbol (0.1.7)
+  - SFServiceKit/Timer (0.1.7)
+  - SFStyleKit (0.1.7):
+    - SFStyleKit/Core (= 0.1.7)
+  - SFStyleKit/Core (0.1.7)
   - Shimmer (1.0.2)
   - SkeletonView (1.30.4)
   - SnapKit (5.6.0)
+  - Splitflap (4.1.0)
   - SpreadsheetView (0.9.1)
   - SSZipArchive (2.4.3)
   - Starscream (4.0.8)
@@ -171,12 +219,17 @@ PODS:
   - SVProgressHUD/Core (2.3.1)
   - SwiftDate (6.3.1)
   - SwiftLint (0.54.0)
+  - SwiftMessages (10.0.1):
+    - SwiftMessages/App (= 10.0.1)
+  - SwiftMessages/App (10.0.1)
+  - swiftScan (1.2.1)
   - SwiftTheme (0.6.4)
   - SwiftyJSON (5.0.2)
   - SwipeCellKit (2.7.1)
+  - TagListView (1.4.1)
   - TDBadgedCell (5.6.0)
-  - TKSwitcherCollection (1.4.2)
   - Toast-Swift (5.1.1)
+  - TransitionButton (0.5.3)
   - Twinkle (0.5.0)
   - UIFontComplete (5.0.0)
   - UPCarouselFlowLayout (1.1.2)
@@ -184,6 +237,7 @@ PODS:
   - ViewAnimator (3.1.0)
   - VisualEffectView (4.1.5)
   - Watchdog (5.2)
+  - WCLShineButton (1.0.8)
   - WhatsNew (0.4.6)
   - YXWaveView (0.7.0)
   - YYCache (1.0.4)
@@ -197,6 +251,7 @@ DEPENDENCIES:
   - AnimatedCollectionViewLayout (= 1.0.1)
   - Aspects
   - BouncyLayout
+  - CircleMenu
   - CryptoSwift
   - CTMediator
   - CYLTabBarController/Lottie
@@ -209,11 +264,14 @@ DEPENDENCIES:
   - FlagKit
   - FLAnimatedImage
   - FLEX
+  - Floaty
+  - FoldingCell
   - FontBlaster
   - FSCalendar
   - FSPagerView
   - FSTextView
   - GDPerformanceView-Swift
+  - GlitchLabel
   - GradientLoadingBar
   - GravitySliderFlowLayout
   - HandyJSON
@@ -225,6 +283,7 @@ DEPENDENCIES:
   - IGListKit
   - Instructions
   - IQKeyboardManagerSwift
+  - JohnWick
   - JXPagingView
   - JXPhotoBrowser
   - JXSegmentedView
@@ -245,7 +304,6 @@ DEPENDENCIES:
   - MultiProgressView
   - NewPopMenu
   - NotificationBannerSwift
-  - NumberMorphView
   - NVActivityIndicatorView
   - pop
   - PromiseKit
@@ -255,15 +313,17 @@ DEPENDENCIES:
   - RxCocoa
   - RxSwift
   - ScreenRotator
-  - SFBackgroundTaskManager (from `https://github.com/Sfh03031/SFBackgroundTaskManager.git`)
+  - SFCircleProgressView
   - SFFocusViewLayout
   - SFModuleApp (from `../`)
-  - SFNetworkManager (= 0.1.1)
-  - SFNetworkMonitor (= 0.1.2)
-  - SFStyleKit (= 0.1.2)
+  - SFNetworkManager
+  - SFNetworkMonitor
+  - SFServiceKit (~> 0.1.7)
+  - SFStyleKit
   - Shimmer
   - SkeletonView
   - SnapKit
+  - Splitflap
   - SpreadsheetView
   - Starscream
   - SVProgressHUD
@@ -272,9 +332,10 @@ DEPENDENCIES:
   - SwiftTheme
   - SwiftyJSON
   - SwipeCellKit
+  - TagListView
   - TDBadgedCell
-  - TKSwitcherCollection
   - Toast-Swift
+  - TransitionButton
   - Twinkle
   - UIFontComplete
   - UPCarouselFlowLayout
@@ -282,6 +343,7 @@ DEPENDENCIES:
   - ViewAnimator
   - VisualEffectView
   - Watchdog
+  - WCLShineButton
   - WhatsNew
   - YXWaveView
   - YYCache
@@ -296,6 +358,7 @@ SPEC REPOS:
     - AnimatedCollectionViewLayout
     - Aspects
     - BouncyLayout
+    - CircleMenu
     - CryptoSwift
     - CTMediator
     - CYLTabBarController
@@ -308,11 +371,14 @@ SPEC REPOS:
     - FlagKit
     - FLAnimatedImage
     - FLEX
+    - Floaty
+    - FoldingCell
     - FontBlaster
     - FSCalendar
     - FSPagerView
     - FSTextView
     - GDPerformanceView-Swift
+    - GlitchLabel
     - GradientLoadingBar
     - GravitySliderFlowLayout
     - HandyJSON
@@ -325,6 +391,7 @@ SPEC REPOS:
     - IGListKit
     - Instructions
     - IQKeyboardManagerSwift
+    - JohnWick
     - JXPagingView
     - JXPhotoBrowser
     - JXSegmentedView
@@ -349,9 +416,9 @@ SPEC REPOS:
     - MultiProgressView
     - NewPopMenu
     - NotificationBannerSwift
-    - NumberMorphView
     - NVActivityIndicatorView
     - pop
+    - ProgressHUD
     - PromiseKit
     - Pulsator
     - PYSearch
@@ -361,25 +428,31 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
     - ScreenRotator
+    - SFCircleProgressView
     - SFFocusViewLayout
     - SFNetworkManager
     - SFNetworkMonitor
+    - SFServiceKit
     - SFStyleKit
     - Shimmer
     - SkeletonView
     - SnapKit
+    - Splitflap
     - SpreadsheetView
     - SSZipArchive
     - Starscream
     - SVProgressHUD
     - SwiftDate
     - SwiftLint
+    - SwiftMessages
+    - swiftScan
     - SwiftTheme
     - SwiftyJSON
     - SwipeCellKit
+    - TagListView
     - TDBadgedCell
-    - TKSwitcherCollection
     - Toast-Swift
+    - TransitionButton
     - Twinkle
     - UIFontComplete
     - UPCarouselFlowLayout
@@ -387,6 +460,7 @@ SPEC REPOS:
     - ViewAnimator
     - VisualEffectView
     - Watchdog
+    - WCLShineButton
     - WhatsNew
     - YXWaveView
     - YYCache
@@ -395,8 +469,6 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   AAInfographics:
     :git: https://github.com/AAChartModel/AAChartKit-Swift.git
-  SFBackgroundTaskManager:
-    :git: https://github.com/Sfh03031/SFBackgroundTaskManager.git
   SFModuleApp:
     :path: "../"
 
@@ -404,9 +476,6 @@ CHECKOUT OPTIONS:
   AAInfographics:
     :commit: 222b74aa37f06b8dd68a8b178264b4fae34d8d5a
     :git: https://github.com/AAChartModel/AAChartKit-Swift.git
-  SFBackgroundTaskManager:
-    :commit: 821db9458ebdcfb01a6e9aa6cfd6e7343efeb60e
-    :git: https://github.com/Sfh03031/SFBackgroundTaskManager.git
 
 SPEC CHECKSUMS:
   AAInfographics: 31fd2891509a97e34693aeaf681daa7b2b4d8c0f
@@ -417,6 +486,7 @@ SPEC CHECKSUMS:
   AnimatedCollectionViewLayout: 00f0997fd26f0fd02d8b99765023b95570b5d826
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   BouncyLayout: 946047ef4987959bc107731c665ca4fdcdef5e17
+  CircleMenu: a66095199a5e26f19acbb212f077010257767fe5
   CryptoSwift: c63a805d8bb5e5538e88af4e44bb537776af11ea
   CTMediator: 3f3578b525b3a46a7a2f92a99922ec40363f4269
   CYLTabBarController: db44b5901a28693a8a4279e4721b3aafdd36c178
@@ -429,11 +499,14 @@ SPEC CHECKSUMS:
   FlagKit: eca7dc89064b0c986302ba9acefad1bf80a435b1
   FLAnimatedImage: bbf914596368867157cc71b38a8ec834b3eeb32b
   FLEX: f21ee4f498eed3f8a1eded66b21939fd3b7a22ce
+  Floaty: e2bd5a0f6f7f70899e26ff2da31081c8bee8d1b0
+  FoldingCell: f92eb5fb9842319e7cd08c71533c98408b785099
   FontBlaster: 941f89d735a29e1c7d24e7a90d3e16939ef1609a
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
   FSTextView: 9e2ca07bb6bb0fb7e77b49b2717adf81f3c620b5
   GDPerformanceView-Swift: 22d964fe40b19e3d914dba2586237d064de8fd77
+  GlitchLabel: b7970749cfdc780ef5489709726a60dd93c71e77
   GradientLoadingBar: 97d0b455027194409b50c3fd589728ea7d79f08d
   GravitySliderFlowLayout: bb9ae6a302b85821c9e0271c00533fae8091143b
   HandyJSON: 9e4e236f5d2dbefad5155a77417bbea438201c03
@@ -446,6 +519,7 @@ SPEC CHECKSUMS:
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   Instructions: 3aac22d036495ba4c40e00747e0a275da40ce53d
   IQKeyboardManagerSwift: 12d89768845bb77b55cc092ecc2b1f9370f06b76
+  JohnWick: 542095427a787255d23d47f2f0c5f49f0417f0b5
   JXPagingView: afdd2e9af09c90160dd232b970d603cc6e7ddd0e
   JXPhotoBrowser: a6d745f5711bde79b02ba29165e2456ab5bde476
   JXSegmentedView: 651b60fcf705258ba9395edd53876dbd2853fb68
@@ -470,39 +544,44 @@ SPEC CHECKSUMS:
   MultiProgressView: 65e5bb8181687099ade56d16d85d245a92fafa96
   NewPopMenu: c6129e08e8192f6257ceb5f9a4357e1b59c6e2e7
   NotificationBannerSwift: dce54ded532b26e30cd8e7f4d80e124a0f2ba7d1
-  NumberMorphView: d364796d0c0bd343505b94350b5f4ba8e67de37c
   NVActivityIndicatorView: fe52a6a68664c2df8991d7d9e3d86d8d19453c53
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
+  ProgressHUD: abb9136ae23c85204236828562cb9a8ec98efb44
   PromiseKit: d1be44b474e5acfa16adf007a1f49f104e10fead
   Pulsator: eb5a9f9be4bdcbd19903984c65deca6aabe50a17
   PYSearch: 76dee18eea3309b60921a5d6a69390a63a5dda15
   R.swift: 0af0d882f49f03711415cb4e5215daa977d8a480
-  ReachabilitySwift: 5ae15e16814b5f9ef568963fb2c87aeb49158c66
+  ReachabilitySwift: 32793e867593cfc1177f5d16491e3a197d2fccda
   RxCocoa: 44a80de90e25b739b5aeaae3c8c371a32e3343cc
   RxRelay: 45eaa5db8ee4fb50e5ebd57deec0159e97fa51e6
   RxSwift: a4b44f7d24599f674deebd1818eab82e58410632
   ScreenRotator: 94d1496f0c3bc3ce87ca80705f2f9b10782628c0
-  SFBackgroundTaskManager: 5a7eeff82dbe712f119e6b6def3587ee91f3862a
+  SFCircleProgressView: 9724fd8b116cde8e1e72d1b528da3a60ad61b049
   SFFocusViewLayout: ecd99394062cf7ddff79fb3cd80dc9a371c27832
   SFModuleApp: a5614bdcf78e47ef5cd4941d4afd2bd6a818c194
-  SFNetworkManager: 8765ac2482f07b1ac720bc1de1c7b33d92e87c66
-  SFNetworkMonitor: f59570c32b4af88fd8f15b5d3423bd8a0012121d
-  SFStyleKit: 68b98270511c06201dded329896dace2960de218
+  SFNetworkManager: 44abc434111dbdcf8586f97a86647c5b491e52dc
+  SFNetworkMonitor: d0fe7f45a151dc42f54c86fcefc1381126cf6a99
+  SFServiceKit: a1d3c0136065584cb07fa3b207be607d9316d581
+  SFStyleKit: 17449bb970636c434bebc62b2c03205b393fd75a
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  Splitflap: 20029bf87d958beb955a6ee5d2e2622e41df34bf
   SpreadsheetView: 688dbd19f2b355df0eb09e486266fd913a013449
   SSZipArchive: fe6a26b2a54d5a0890f2567b5cc6de5caa600aef
   Starscream: 19b5533ddb925208db698f0ac508a100b884a1b9
   SVProgressHUD: 4837c74bdfe2e51e8821c397825996a8d7de6e22
   SwiftDate: 72d28954e8e1c6c1c0f917ccc8005e4f83c7d4b2
   SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
+  SwiftMessages: 759b4a0bf5c3a116a0d7e8a34b098ba83c458625
+  swiftScan: 0849e7d7c1c641384767a573ee8cb90b88d1ddd9
   SwiftTheme: 007cbaf1f9e171caf6448a4657533e54c682b285
   SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
+  TagListView: a1c236d17960a0cf64156725a76ce6d73ebce2be
   TDBadgedCell: 50beb1c113bad0422b4d4ed27bb54e128936ec6d
-  TKSwitcherCollection: c0a51de35317a9de292e80b85fa275299607da6b
   Toast-Swift: 7a03a532afe3a560d4044bc7c237e2864d295173
+  TransitionButton: 36283346e17c64775a1b3bc3a7a72940a367de1f
   Twinkle: 6bd04201ee3bf2f5007463b57b7af6e8c948c985
   UIFontComplete: 843cb7b58fd6503b3918447918ea6daaeaceccff
   UPCarouselFlowLayout: 4c7d2c43a10ebb1597bde502a53699d378341dad
@@ -510,11 +589,12 @@ SPEC CHECKSUMS:
   ViewAnimator: a9ceed80266e00fd435ec4fb99b2df64d580d0e4
   VisualEffectView: 333acded3f79d088ae44aff57d5f3a62554e37b6
   Watchdog: 622647e6bc5a55665e6dbae0b7831ad8d95abeab
+  WCLShineButton: 315ee9b0024b1cc56dba34fb6a8878937eb8d0b1
   WhatsNew: d66a52b294e90d5bc133877e270ea7ce0b945003
   YXWaveView: 51eba8108c7743ebbaaa93504597577cfe4f71b5
   YYCache: 8105b6638f5e849296c71f331ff83891a4942952
   YZHeaderScaleImage: 1ca4ed11644a4ccad7c4370de2fcbc8f6e145793
 
-PODFILE CHECKSUM: db383fb5b58c641e826bcd98536438f3aa4e2ab5
+PODFILE CHECKSUM: e9efa7a0d70da45c34aea615acae513c5ca3ac77
 
 COCOAPODS: 1.13.0

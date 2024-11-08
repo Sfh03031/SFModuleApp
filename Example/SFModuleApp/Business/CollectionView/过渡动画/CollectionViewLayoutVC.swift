@@ -76,7 +76,7 @@ class CollectionViewLayoutVC: BaseViewController {
         view.delegate = self
         view.dataSource = self
         view.register(AnimatedLayoutCell.self, forCellWithReuseIdentifier: NSStringFromClass(AnimatedLayoutCell.self))
-        view.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "headerId")
+        view.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerId")
         if #available(iOS 11.0, *) {
             view.contentInsetAdjustmentBehavior = .never
         }

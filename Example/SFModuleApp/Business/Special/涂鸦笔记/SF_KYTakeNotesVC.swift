@@ -51,16 +51,16 @@ class SF_KYTakeNotesVC: BaseViewController {
         super.viewDidLoad()
         self.view.backgroundColor = .black
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: Notification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         loadViews()
     }
     
     //TODO: deinit
     deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     //MARK: - noti methods
@@ -70,7 +70,7 @@ class SF_KYTakeNotesVC: BaseViewController {
         self.isKeyboardShow = true
         self.drawTextView.isKeyboardShow = true
         if let info = noti.userInfo as? NSDictionary,
-           let value = info.object(forKey: UIKeyboardFrameEndUserInfoKey) as? NSValue {
+           let value = info.object(forKey: UIResponder.keyboardFrameEndUserInfoKey) as? NSValue {
             let height = value.cgRectValue.size.height
             UIView.animate(withDuration: 0.2, delay: 0) {
                 if isIPad {
@@ -169,7 +169,7 @@ class SF_KYTakeNotesVC: BaseViewController {
     }
     
     ///屏幕的哪些边缘不需要首先响应系统手势
-    override func preferredScreenEdgesDeferringSystemGestures() -> UIRectEdge {
+    func preferredScreenEdgesDeferringSystemGestures() -> UIRectEdge {
         return UIRectEdge.all
     }
     
@@ -287,7 +287,7 @@ class SF_KYTakeNotesVC: BaseViewController {
                 textLayer.backgroundColor = UIColor.clear.cgColor
                 textLayer.contentsScale = UIScreen.main.scale
                 textLayer.foregroundColor = temp.textView.textColor?.cgColor
-                textLayer.alignmentMode = kCAAlignmentCenter
+                textLayer.alignmentMode = CATextLayerAlignmentMode.center
                 textLayer.isWrapped = true
                 textLayer.fontSize = temp.textView.font?.pointSize ?? 16
                 textLayer.string = temp.textView.text

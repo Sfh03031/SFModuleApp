@@ -61,6 +61,7 @@ class EmptyVC: BaseViewController {
                 self.tableView.reloadData()
             }
         })
+//        view.ly_emptyView = SparkViewsService.getEmptyView()
         return view
     }()
     

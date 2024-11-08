@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import YZHeaderScaleImage
 
 class TableHeadAutoScaleVC: BaseViewController {
 

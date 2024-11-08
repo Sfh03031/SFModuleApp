@@ -41,9 +41,9 @@ public extension UIApplication {
             for scene in scenes where !findNormalWindow {
                 if let windowScene = scene as? UIWindowScene {
                     for keyWindow in windowScene.windows.filter({ $0.isKeyWindow }) where !findNormalWindow {
-                        if keyWindow.windowLevel != UIWindowLevelNormal {
+                        if keyWindow.windowLevel != UIWindow.Level.normal {
                             let windows = currentApplication.windows
-                            for temp in windows where (!findNormalWindow && temp.windowLevel == UIWindowLevelNormal) {
+                            for temp in windows where (!findNormalWindow && temp.windowLevel == UIWindow.Level.normal) {
                                 targetWindow = temp
                                 findNormalWindow = true
                                 break
@@ -57,10 +57,10 @@ public extension UIApplication {
                 }
             }
         } else {
-            if let keyWindow = targetWindow, keyWindow.windowLevel != UIWindowLevelNormal {
+            if let keyWindow = targetWindow, keyWindow.windowLevel != UIWindow.Level.normal {
                 let windows = currentApplication.windows
                 for temp in windows {
-                    if temp.windowLevel == UIWindowLevelNormal {
+                    if temp.windowLevel == UIWindow.Level.normal {
                         targetWindow = temp
                         break
                     }

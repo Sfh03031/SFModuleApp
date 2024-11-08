@@ -35,7 +35,7 @@ extension UIView {
     ///   - increment: 扩展范围
     ///   - beginAlpha: 初始透明度
     func addRadarAnimation(inset: UIEdgeInsets = .zero, fillColor: UIColor = .white, expand increment: CGFloat = 30, beginAlpha: CGFloat = 0.5) -> RectRadarAnimationView {
-        let radarFrame = UIEdgeInsetsInsetRect(frame, inset)
+        let radarFrame = frame.inset(by: inset)
         return addRadarAnimation(beginSize: radarFrame.size, fillColor: fillColor, expand: increment, beginAlpha: beginAlpha)
     }
 }
@@ -66,7 +66,7 @@ class RectRadarAnimationView: UIView {
         self.fillColor = fillColor
         self.beginAlpha = beginAlpha
         let inset = UIEdgeInsets(top: -increment, left: -increment, bottom: -increment, right: -increment)
-        super.init(frame: UIEdgeInsetsInsetRect(frame, inset))
+        super.init(frame: frame.inset(by: inset))
     }
     
     override func removeFromSuperview() {
@@ -90,7 +90,7 @@ class RectRadarAnimationView: UIView {
                 cell.progress = 0.0
                 return cell
             }
-            return RadarCell(beginFrame: UIEdgeInsetsInsetRect(self!.bounds, UIEdgeInsets(self!.maxIncrement)), expand: self!.maxIncrement, fillColor: self!.fillColor, beginAlpha: self!.beginAlpha)
+            return RadarCell(beginFrame: self!.bounds.inset(by: UIEdgeInsets(self!.maxIncrement)), expand: self!.maxIncrement, fillColor: self!.fillColor, beginAlpha: self!.beginAlpha)
         }()
         addSubview(radarCell)
     }
@@ -137,7 +137,7 @@ extension RectRadarAnimationView {
             self.increment = increment
             self.fillColor = fillColor
             self.beginAlpha = beginAlpha
-            super.init(frame: UIEdgeInsetsInsetRect(beginFrame, UIEdgeInsets(-increment)))
+            super.init(frame: beginFrame.inset(by: UIEdgeInsets(-increment)))
             self.backgroundColor = .clear
         }
         
@@ -147,7 +147,7 @@ extension RectRadarAnimationView {
         
         override func draw(_ rect: CGRect) {
             let currnetIncrement = increment * progress
-            let drawRect = UIEdgeInsetsInsetRect(beginFrame, UIEdgeInsets(-currnetIncrement))
+            let drawRect = beginFrame.inset(by: UIEdgeInsets(-currnetIncrement))
             let ctx = UIGraphicsGetCurrentContext()
             let path = UIBezierPath(roundedRect: drawRect, cornerRadius: min(drawRect.width, drawRect.height) * 0.5).cgPath
             ctx?.addPath(path)
@@ -178,7 +178,7 @@ extension RectRadarAnimationView {
         
         init() {
             timer = Timer(fireAt: Date.distantFuture, interval: 1, target: self, selector: #selector(RectRadarAnimationView.RadarScheduler.timerScheduled), userInfo: nil, repeats: true)
-            RunLoop.current.add(timer, forMode: .commonModes)
+            RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
         }
         
         func remove(for identifier: AnyHashable) {
@@ -224,7 +224,7 @@ extension RectRadarAnimationView {
         
         init() {
             timer = Timer(fireAt: Date.distantFuture, interval: 0.02, target: self, selector: #selector(RectRadarAnimationView.AnimateScheduler.timerScheduled), userInfo: nil, repeats: true)
-            RunLoop.current.add(timer, forMode: .commonModes)
+            RunLoop.current.add(timer, forMode: RunLoop.Mode.common)
         }
         
         func remove(for identifier: AnyHashable) {

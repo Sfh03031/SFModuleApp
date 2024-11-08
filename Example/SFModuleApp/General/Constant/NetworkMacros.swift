@@ -16,6 +16,8 @@ public var M_HOST_URL: String { return getMHostUrl() }
 
 /// 网络请求地址
 public let HOST_URL_DEV = "https://apidev.sparke.cn/"
+public let HOST_URL_DEV1 = "https://apidev1.sparke.cn/"
+public let HOST_URL_DEV2 = "https://apidev2.sparke.cn/"
 public let HOST_URL_TEST = "https://apitest.sparke.cn/"
 public let HOST_URL_RELEASE = "https://api2.sparke.cn/"
 

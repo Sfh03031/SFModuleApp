@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import TransitionButton
 
 class TransitionButtonVC: BaseViewController {
 

@@ -1,6 +1,6 @@
 use_frameworks!
 
-platform :ios, '12.0'
+platform :ios, '13.0'
 
 target 'SFModuleApp_Example' do
   pod 'SFModuleApp', :path => '../'
@@ -62,13 +62,13 @@ target 'SFModuleApp_Example' do
   # 分页
   pod 'JXPagingView'
   # 多标签, 改了点属性，原版也可用
-  # pod 'TagListView'
+  pod 'TagListView'
   # 水波纹
   pod 'YXWaveView'
   # 渐变加载条
   pod 'GradientLoadingBar'
-  # 数字变形
-  pod 'NumberMorphView'
+  # 数字变形, api写法过期
+#  pod 'NumberMorphView'
   # 五彩纸屑, api写法过期
   # pod "SAConfettiView"
   # 支持色调颜色的模糊效果
@@ -98,42 +98,43 @@ target 'SFModuleApp_Example' do
   pod 'LTMorphingLabel'
   # 文字高亮 #、@、url，支持自定义类型
   pod 'ActiveLabel'
-  # 文字翻转 - CAMediaTimingFunctionName写法过期
-  # pod 'Splitflap'
-  # 文字晃瞎眼 - runloop方法过期
-  # pod "GlitchLabel"
-  # 倒计时 - CAEmitterLayer写法过期、runloop方法过期
-  # pod 'CountdownLabel'
+  # 文字翻转
+   pod 'Splitflap'
+  # 文字晃瞎眼
+   pod "GlitchLabel"
+  # 倒计时，api写法过期，api报错
+#   pod 'CountdownLabel'
   # 展开/收起 - 文字只能左对齐，收起的点击事件触发区域不是文字
   # pod "ExpandableLabel"
+  
+  
   
   # ===================== Button ==================== #
   # 带动效的按钮，类似一键三连效果
   pod 'FaveButton'
-  # api写法过期
-  # pod 'DOFavoriteButton'
-  # api写法过期
-  # pod 'WCLShineButton'
-  # 液体浮动，api写法过期
-  # pod "LiquidFloatingActionButton"
-  # 悬浮按钮，效果类似LiquidFloatingActionButton，api写法过期
-  # pod 'Floaty'
-  # 带抖动、展开动画，api写法过期
-  # pod 'TransitionButton'
+  # 带动效的按钮，类似一键三连效果
+  pod 'WCLShineButton'
+  # 带动效的按钮，类似一键三连效果，api写法过期
+#  pod 'DOFavoriteButton'
+  # 悬浮按钮，最新版去掉了扇形、半圆形和圆形
+  pod 'Floaty'
+  # 带抖动、展开动画
+  pod 'TransitionButton'
   # 登录按钮
   pod 'LGButton'
+  # 液体浮动，api写法过期
+#  pod "LiquidFloatingActionButton"
+
+
   
-  # ===================== Alert/HUD/Toast ==================== #
+  # ===================== 提示 ==================== #
   # hud
   pod 'SVProgressHUD'
   # toast
   pod 'Toast-Swift'
   # tip
   pod 'AMPopTip'
-  
-  
-  # ===================== Indicator ==================== #
-  # 加载动画
+  # Indicator
   pod 'NVActivityIndicatorView'
   
   
@@ -146,8 +147,8 @@ target 'SFModuleApp_Example' do
   
   
   # ===================== Switch ==================== #
-  # 几种开关样式
-  pod 'TKSwitcherCollection'
+  # 几种开关样式, api过期
+#  pod 'TKSwitcherCollection'
   
   
   
@@ -158,8 +159,8 @@ target 'SFModuleApp_Example' do
   # ===================== Menu ==================== #
   # 弹出菜单
   pod 'NewPopMenu'
-  # 环形按钮菜单 - 有些方法已经过期且库已经好几年不维护了
-  # pod 'CircleMenu'
+  # 环形按钮菜单
+  pod 'CircleMenu'
   
   
   
@@ -187,8 +188,8 @@ target 'SFModuleApp_Example' do
   # ===================== tableView ==================== #
   # 头图缩放
   pod 'YZHeaderScaleImage'
-  # 折叠动画cell - CAMediaTimingFunctionName写法过期
-  # pod 'FoldingCell'
+  # 折叠动画cell
+  pod 'FoldingCell'
   # 左滑右滑事件
   pod 'SwipeCellKit'
   # 标记
@@ -265,6 +266,41 @@ target 'SFModuleApp_Example' do
   
   
   
+  # ===================== Theme ==================== #
+  # 换肤
+  pod 'SwiftTheme'
+  
+  
+  
+  # ===================== Live ==================== #
+  # 直播推流
+  pod 'LFLiveKit'
+  
+  
+  
+  # ===================== 切面hook ==================== #
+  # hook
+  pod 'Aspects'
+  
+  
+  
+  # ===================== 搜索 ==================== #
+  # 热门搜索
+  pod "PYSearch"
+  
+  
+  
+  # ===================== Other ==================== #
+  # 日期处理
+  pod 'SwiftDate'
+  # 二维码生成、识别
+  pod 'EFQRCode'
+  # 根据国家编码生成国旗
+  pod 'FlagKit'
+  # pod 'InjectHotReload'
+  
+  
+  
   # ===================== Common ==================== #
   # 键盘管理
   pod 'IQKeyboardManagerSwift'
@@ -286,65 +322,32 @@ target 'SFModuleApp_Example' do
   pod 'MJRefresh'
   # 看门狗
   pod 'Watchdog'
-  # UIView调试器，FLEX完全可以代替
-  # pod 'InAppViewDebugger'
   # 更新简介
   pod 'WhatsNew'
   # 性能监控
   pod 'GDPerformanceView-Swift'
-  # 后台保活
-  pod 'SFBackgroundTaskManager', :git => 'https://github.com/Sfh03031/SFBackgroundTaskManager.git'
-  
-  
-  # ===================== Theme ==================== #
-  # 换肤
-  pod 'SwiftTheme'
-  
-  
-  
-  # ===================== Router ==================== #
-  # 业务解耦，中间件
+  # 业务解耦中间件
   pod 'CTMediator'
   
   
   
-  # ===================== Live ==================== #
-  # 直播推流
-  pod 'LFLiveKit'
-  
-  
-  
-  # ===================== 切面hook ==================== #
-  # hook
-  pod 'Aspects'
-  
-  # ===================== 切面hook ==================== #
-  # 热门搜索
-  pod "PYSearch"
-  
-  
-  
-  # ===================== Other ==================== #
-  # 日期处理
-  pod 'SwiftDate'
-  # 二维码生成、识别
-  pod 'EFQRCode'
-  # 根据国家编码生成国旗
-  pod 'FlagKit'
-  # pod 'InjectHotReload'
-  
-  
+  # 应用内调试工具和探测工具集
   pod 'FLEX', :configurations => ['Debug']
-  # UI调试
+  # pod 'InAppViewDebugger'# UIView调试器，FLEX完全可以代替
+  
+  # UI调试工具，类似Xcode自带的UI Inspector，或另一款软件Reveal
   pod 'LookinServer', :subspecs => ['Swift'], :configurations => ['Debug']
   
   
   
   # ===================== SF ==================== #
-  pod 'SFStyleKit', '0.1.2'
-  pod 'SFNetworkMonitor', '0.1.2'
-  pod 'SFNetworkManager', '0.1.1'
+  pod 'JohnWick'
+  pod 'SFStyleKit'
+  pod 'SFServiceKit', '~> 0.1.7'
   pod 'LottieService'
+  pod 'SFNetworkMonitor'
+  pod 'SFNetworkManager'
+  pod 'SFCircleProgressView'
   
   
   

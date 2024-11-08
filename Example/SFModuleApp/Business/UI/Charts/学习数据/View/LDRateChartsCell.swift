@@ -47,7 +47,7 @@ class LDRateChartsCell: UITableViewCell {
     
     
     
-    override init(style:UITableViewCellStyle, reuseIdentifier:String?) {
+    override init(style:UITableViewCell.CellStyle, reuseIdentifier:String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.selectionStyle = .none
         self.backgroundColor = UIColor.sf.hexColor(hex: "#F5F6F9")

@@ -38,7 +38,7 @@ class TimeLineVC: BaseViewController {
             ISPoint(title: "11:45 PM", description: "台湾岛东部的花莲县，直面太平洋。花莲港是台湾的主要港口之一，所以这一次演习，解放军在花莲附近的海空域开展模拟打击的演练，就展示了要联合夺权、要占控要地的能力，这就表明了解放军可以从多个方向对台湾的港口、机场等重要目标进行威慑和打击。", touchUpInside: touchAction),
         ]
         
-        timeLineView.contentInset = UIEdgeInsetsMake(20.0, 20.0, 20.0, 20.0)
+        timeLineView.contentInset = UIEdgeInsets(top: 20.0, left: 20.0, bottom: 20.0, right: 20.0)
         timeLineView.points = myPoints
         
     }

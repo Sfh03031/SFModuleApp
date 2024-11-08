@@ -178,9 +178,9 @@ class RecognizerController: UIViewController, UIImagePickerControllerDelegate, U
     }
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let tryImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+        if let tryImage = info[UIImagePickerController.InfoKey.editedImage.rawValue] as? UIImage {
             imageView.image = tryImage
-        } else if let tryImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+        } else if let tryImage = info[UIImagePickerController.InfoKey.originalImage.rawValue] as? UIImage {
             imageView.image = tryImage
         } else {
             print(Localized.errored)

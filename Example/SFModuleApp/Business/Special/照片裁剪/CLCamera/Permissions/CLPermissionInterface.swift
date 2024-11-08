@@ -128,17 +128,17 @@ struct CLCameraPermission: CLPermissionInterface {
 /// 麦克风权限
 struct CLMicrophonePermission: CLPermissionInterface {
     var isAuthorized: Bool {
-        AVAudioSession.sharedInstance().recordPermission() == .granted
+        AVAudioSession.sharedInstance().recordPermission == .granted
     }
 
     var isDenied: Bool {
-        AVAudioSession.sharedInstance().recordPermission() == .denied
+        AVAudioSession.sharedInstance().recordPermission == .denied
     }
 
     func request(сompletionCallback: ((CLAuthorizationStatus) -> Void)?) {
         if AVAudioSession.sharedInstance().isInputAvailable {
             var authorizationStatus: CLAuthorizationStatus = .unknown
-            switch AVAudioSession.sharedInstance().recordPermission() {
+            switch AVAudioSession.sharedInstance().recordPermission {
             case .undetermined:
                 authorizationStatus = .notDetermined
             case .granted:
